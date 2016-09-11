@@ -11,11 +11,12 @@
                     <img class="img-thumbnail" title="{{$film->title}}" alt="{{$film->title}}" src="{{'../'.$film->image}}">
                 </div>
                 <div class="col-md-5">
-                    <a class="row" href="http://www.kinopoisk.ru/film/822708/">
-                        <img  src="http://rating.kinopoisk.ru/822708.gif">
+                    @if($film->release<=@date('Y-m-d'))
+                    <a class="row" href="http://www.kinopoisk.ru/film/{{$film->kinopoisk}}/">
+                        <img  src="http://rating.kinopoisk.ru/{{$film->kinopoisk}}.gif">
                     </a>
-                    <span class='imdbRatingPlugin'  data-title='tt1253863' data-style='p2'>
-						<a href='http://www.imdb.com/title/tt1253863' ><img alt='on IMDb' src='http://g-ecx.images-amazon.com/images/G/01/imdb/plugins/rating/images/imdb_46x22.png'>
+                    <span class='imdbRatingPlugin'  data-title='{{$film->imdb}}' data-style='p2'>
+						<a href='http://www.imdb.com/title/{{$film->imdb}}' ><img alt='on IMDb' src='http://g-ecx.images-amazon.com/images/G/01/imdb/plugins/rating/images/imdb_46x22.png'>
 						</a></span>
                     <script>
                         (function(d,s,id){var js,stags=d.getElementsByTagName(s)[0];
@@ -23,7 +24,7 @@
                             js.src='http://g-ec2.images-amazon.com/images/G/01/imdb/plugins/rating/js/rating.min.js';
                             stags.parentNode.insertBefore(js,stags);})(document,'script','imdb-rating-api');
                     </script>
-                    <div>  МЕстный рейтинг </div>
+                @endif
                 </div>
 
             </div>
@@ -37,15 +38,15 @@
                 <strong class='col-xs-6 lead'>Blu-Ray релиз предположительно:</strong><p class='col-xs-6 lead' style='color: #0077d3;'>{{@date('d-m-Y', strtotime($film->Blu_ray))}} года</p>
             </div>
             <div class='row'>
-                <strong class='col-xs-3 lead'>Режиссер:</strong><p class='col-xs-9 lead' style='color: #0077d3;'>Имя</p>
+                <strong class='col-xs-3 lead'>Режиссер:</strong><p class='col-xs-9 lead' style='color: #0077d3;'>{{$film->director}}</p>
             </div>
             <div class='row'>
-                <strong class='col-xs-3 lead'>Актеры:</strong><p class='col-xs-9 lead' style='color: #0077d3;'>Имя</p>
+                <strong class='col-xs-3 lead'>Актеры:</strong><p class='col-xs-9 lead' style='color: #0077d3;'>{{$film->actors}}</p>
             </div>
             </div>
         </div>
     <article class="row">
-        <div class="col-md-9 col-md-offset-1">
+        <div class="col-md-10 ">
             <p>&nbsp;Знатный клипмейкер Джастин Лин под влиянием финансовых потокок JJ Абрамса снова в деле.</p>
 
             <p>В общем и целом, на главных героев в очередной раз напала какая то пакость, и судя по трейлерам, это был местный аналог космических зергов, короче похерили корабль и главным героям пришлось десантироваться на ближайшую планету,&nbsp;</p>

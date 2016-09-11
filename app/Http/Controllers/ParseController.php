@@ -46,24 +46,33 @@ class ParseController extends Controller
 
     public function parse(Request $request)
     {
-      //  if (isset($request->url)) {
-$flag=0;
-            $url =  $request->url;
-           // $url =  'http://www.imdb.com/title/tt1253863/';
+        if (isset($request->url)) {
+            $flag = 0;
+            $url = $request->url;
+            // $url =  'http://www.imdb.com/title/tt3717252/';
             $simpleHTML = new Htmldom();
             $all = $simpleHTML->file_get_html($url);
             foreach ($all->find('//*[@id="title-overview-widget"]/div[2]/div[3]/div[1]/a/img') as $link) {
                 $image_sourse = $link->src;
             }
-            foreach ($all->find('//*[@id="titleDetails"]/div[4]') as $link) {
-                $data = $link->innertext;
+            for($i=2;$i<5;$i++){
+                foreach ($all->find('//*[@id="titleDetails"]/div['.$i.']') as $link) {
+                   $data = $link->innertext;
+                   if(substr_count($data,'Release Date')){
+                       echo "Запись найдена";
+                       break 2;
+                   }
+
+                }
             }
-            foreach ($all->find('//*[@id="title-overview-widget"]/div[2]/div[2]/div/div[2]/div[2]/h1') as $link) {
+
+            foreach ($all->find('//*[@id="title-overview-widget"]/div[2]/div[2]/div/div/div[2]/h1') as $link) {
+
                 $title = $link->innertext;
                 $title = preg_replace('~<span.*<\/span>~', '', $title);
-                if (!preg_match('/[а-я]{3,}/iu',$title)){ //Если название нерусское
-                echo   $flag=1;
-                }else{
+                if (!preg_match('/[а-я]{3,}/iu', $title)) { //Если название нерусское
+                    echo $flag = 1;
+                } else {
                     foreach ($all->find('//*[@id="title-overview-widget"]/div[2]/div[2]/div/div[2]/div[2]/div[1]') as $link) {
                         $original = $link->innertext;
                     }
@@ -79,19 +88,20 @@ $flag=0;
                 $data = $date[2] . '-' . $this->dat($date[1]) . '-' . $date[0];
             }
 
-                $title = trim($title);
-                if ($flag==1){
-                    $original=$title;
-                }else{
-                    $original = preg_replace('~<span.*<\/span>~', '', $original);
-                }
-                $massData = array('original' => $original,
-                    'title' => $title,
-                    'data' => $data);
+            $title = trim($title);
+            if ($flag == 1) {
+                $original = $title;
+            } else {
+                $original = preg_replace('~<span.*<\/span>~', '', $original);
+            }
+            $massData = array('original' => $original,
+                'title' => $title,
+                'data' => $data);
             $original = preg_replace('~[[:punct:]]|[[:space:]]~', '', $original); // очищаем от всякой пунктуации
             $pic = $this->getImage($image_sourse, $original); // добываем изображение
-           $massData['image'] = $pic;
-           return view('parseFormImdb', ['massData' => $massData]);
+            $massData['image'] = $pic;
+            return view('parseFormImdb', ['massData' => $massData]);
+        }
     }
         public   function getImage($url, $title_image)
         {

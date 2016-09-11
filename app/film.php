@@ -48,6 +48,10 @@ public function createFilm($date){
     $actors=$date['actors'];
     $director=$date['director'];
     $trailer=$date['trailer'];
+    preg_match('~[0-9]{4,}~',$kinopoisk,$a);
+    $kinopoisk=$a[0];
+    preg_match('~tt.[0-9]{1,}~',$imdb,$a);
+    $imdb=$a[0];
     return DB::insert('INSERT INTO `films` (`title`, `image`, `original`, `plot`, `imdb`, `Blu_ray`, `release`, `description`, `created_at`, `updated_at`,`DVD_source`,`kinopoisk`, `director`,`actors` ,`trailer`) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [$title, $image, $original, $plot, $imdb, $Blu_ray, $release, $description,Carbon::now(),Carbon::now(),$DVD_sourse,$kinopoisk,$director,$actors,$trailer]);
 }
     public function getFilm(){
@@ -76,8 +80,7 @@ public function createFilm($date){
         $trailer=$date['trailer'];
         $trailer=str_replace("https://www.youtube.com/watch?v=","",$trailer);
         
-       preg_match('~tt.[0-9]{1,}~',$imdb,$a);
-       $imdb=$a[0];
+
        return DB::update('UPDATE `films` SET `title`=?,`image`=?,`original`=?,`plot`=?,`imdb`=?,`Blu_ray`=?,`release`=?,`description`=?,`updated_at`=?, `DVD_source`=?, `kinopoisk`=?, `director`=?, `actors`=?, `trailer`=? WHERE id=?', [$title, $image, $original, $plot, $imdb, $Blu_ray, $release, $description,Carbon::now(),$DVD_source,$kinopoisk,$director,$actors,$trailer,$id]);
     }
     public function drop($id)
