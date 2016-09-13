@@ -43,8 +43,17 @@
             <div class='row'>
                 <strong class='col-xs-3 lead'>Актеры:</strong><p class='col-xs-9 lead' style='color: #0077d3;'>{{$film->actors}}</p>
             </div>
+            <div class="row">
+                <div class="col-xs-2 btn btn-info ">пофиг</div>
+                <div class="col-xs-6  progress">
+                    <div class="progress-bar progress-bar-info progress-bar-striped"  style="width:70%;height: 100%" >20</div>
+                </div>
+                <div class="col-xs-2 btn btn-info">жду</div>
+
+            </div>
             </div>
         </div>
+
     <article class="row">
         <div class="col-md-10 ">
             <p>&nbsp;Знатный клипмейкер Джастин Лин под влиянием финансовых потокок JJ Абрамса снова в деле.</p>
