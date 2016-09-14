@@ -21,3 +21,11 @@ body{
     margin-left: 10px;
     margin-right: 10px;
 }
+#rating{
+    border:1px solid #ccc;
+    border-radius: 5px;
+}
+iframe{
+    width:70%;
+}
+

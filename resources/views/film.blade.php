@@ -3,14 +3,14 @@
 @section('content')
     @foreach($film as $film)
 <div class="container" style="background: #fff;">
-    <h1 class="row alert alert-info">{{$film->title}} / {{$film->original}}</h1>
+    <h1 class="row alert alert-success">{{$film->title}} / {{$film->original}}</h1>
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4 ">
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-lg-7">
                     <img class="img-thumbnail" title="{{$film->title}}" alt="{{$film->title}}" src="{{'../'.$film->image}}">
                 </div>
-                <div class="col-md-5">
+                <div class="col-lg-5">
                     @if($film->release<=@date('Y-m-d'))
                     <a class="row" href="http://www.kinopoisk.ru/film/{{$film->kinopoisk}}/">
                         <img  src="http://rating.kinopoisk.ru/{{$film->kinopoisk}}.gif">
@@ -32,24 +32,35 @@
         </div>
         <div class="col-sm-8">
             <div class='row'>
-                <strong class='col-xs-6 lead'>Релиз в России:  </strong> <p class='col-xs-6  lead' style='color: #0077d3;  font-size: 20px;'> {{@date('d-m-Y', strtotime($film->release))}} года</p>
+                <strong class='col-sm-6 lead'>Релиз в России:  </strong> <p class='col-sm-6  lead' style='color: #0077d3;  font-size: 20px;'> {{@date('d-m-Y', strtotime($film->release))}} года</p>
             </div>
             <div class='row'>
-                <strong class='col-xs-6 lead'>Blu-Ray релиз предположительно:</strong><p class='col-xs-6 lead' style='color: #0077d3;'>{{@date('d-m-Y', strtotime($film->Blu_ray))}} года</p>
+                <strong class='col-sm-6 lead'>Blu-Ray релиз предположительно:</strong><p class='col-sm-6 lead' style='color: #0077d3;'>{{@date('d-m-Y', strtotime($film->Blu_ray))}} года</p>
             </div>
+            <div class="row hidden-sm hidden-xs" id="rating">
+                <div class="row text-center">Фильм ждет: 20%, А ты?</div>
+                <div class="col-xs-2 btn btn-info  col-xs-offset-1 ">пофиг</div>
+                <div class="col-xs-6  progress">
+                    <div class="progress-bar progress-bar-info progress-bar-striped"  style="width:20%;height: 100%" >20%</div>
+                </div>
+                <div class="col-xs-2 btn btn-info">жду</div>
+                <div class="text-center  " style="margin-bottom: 10px">
+                    <script type='text/javascript' src='//yastatic.net/es5-shims/0.0.2/es5-shims.min.js' charset='utf-8'></script>
+                    <script type='text/javascript' src='//yastatic.net/share2/share.js' charset='utf-8'></script>
+                    <div class='ya-share2' data-services='vkontakte,facebook,odnoklassniki,moimir,twitter,viber,whatsapp'></div>
+                </div>
+            </div>
+
             <div class='row'>
                 <strong class='col-xs-3 lead'>Режиссер:</strong><p class='col-xs-9 lead' style='color: #0077d3;'>{{$film->director}}</p>
             </div>
             <div class='row'>
                 <strong class='col-xs-3 lead'>Актеры:</strong><p class='col-xs-9 lead' style='color: #0077d3;'>{{$film->actors}}</p>
             </div>
-            <div class="row">
-                <div class="col-xs-2 btn btn-info ">пофиг</div>
-                <div class="col-xs-6  progress">
-                    <div class="progress-bar progress-bar-info progress-bar-striped"  style="width:70%;height: 100%" >20</div>
-                </div>
-                <div class="col-xs-2 btn btn-info">жду</div>
-
+            <div class="row visible-sm visible-xs ">
+                <script type='text/javascript' src='//yastatic.net/es5-shims/0.0.2/es5-shims.min.js' charset='utf-8'></script>
+                <script type='text/javascript' src='//yastatic.net/share2/share.js' charset='utf-8'></script>
+                <div class='ya-share2' data-services='vkontakte,facebook,odnoklassniki,moimir,twitter,viber,whatsapp'></div>
             </div>
             </div>
         </div>
