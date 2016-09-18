@@ -28,4 +28,5 @@ Route::post('/store','FilmController@store');
 Route::post('/store/{id}','FilmController@store');
 Route::get('/show/{id}','FilmController@show');
 Route::get('/delete/{id}','FilmController@drop');
-Route::get('/test','ParseController@parse');
+Route:: get('/rating','RatingController@showRating');
+//Route:: post('rating','Rating@add');

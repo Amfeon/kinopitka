@@ -18,12 +18,17 @@
                     <span class='imdbRatingPlugin'  data-title='{{$film->imdb}}' data-style='p2'>
 						<a href='http://www.imdb.com/title/{{$film->imdb}}' ><img alt='on IMDb' src='http://g-ecx.images-amazon.com/images/G/01/imdb/plugins/rating/images/imdb_46x22.png'>
 						</a></span>
-                    <script>
-                        (function(d,s,id){var js,stags=d.getElementsByTagName(s)[0];
-                            if(d.getElementById(id)){return;}js=d.createElement(s);js.id=id;
-                            js.src='http://g-ec2.images-amazon.com/images/G/01/imdb/plugins/rating/js/rating.min.js';
-                            stags.parentNode.insertBefore(js,stags);})(document,'script','imdb-rating-api');
-                    </script>
+
+                        <script>
+                            $.ajax({
+                                type:'GET',
+                                url:'/rating',
+                                data: {id: {{$film->id}}},
+                                success: function(html){
+                                    $("#rating").html(html);
+                                }
+                            });
+                        </script>
                 @endif
                 </div>
 
@@ -37,18 +42,8 @@
             <div class='row'>
                 <strong class='col-sm-6 lead'>Blu-Ray релиз предположительно:</strong><p class='col-sm-6 lead' style='color: #0077d3;'>{{@date('d-m-Y', strtotime($film->Blu_ray))}} года</p>
             </div>
-            <div class="row hidden-sm hidden-xs" id="rating">
-                <div class="row text-center">Фильм ждет: 20%, А ты?</div>
-                <div class="col-xs-2 btn btn-info  col-xs-offset-1 ">пофиг</div>
-                <div class="col-xs-6  progress">
-                    <div class="progress-bar progress-bar-info progress-bar-striped"  style="width:20%;height: 100%" >20%</div>
-                </div>
-                <div class="col-xs-2 btn btn-info">жду</div>
-                <div class="text-center  " style="margin-bottom: 10px">
-                    <script type='text/javascript' src='//yastatic.net/es5-shims/0.0.2/es5-shims.min.js' charset='utf-8'></script>
-                    <script type='text/javascript' src='//yastatic.net/share2/share.js' charset='utf-8'></script>
-                    <div class='ya-share2' data-services='vkontakte,facebook,odnoklassniki,moimir,twitter,viber,whatsapp'></div>
-                </div>
+            <div  class="row hidden-sm hidden-xs" id="rating">
+
             </div>
 
             <div class='row'>

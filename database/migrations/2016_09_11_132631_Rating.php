@@ -9,10 +9,10 @@ class Rating extends Migration
     {
         Schema::create('ratings', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('film_id');
-            $table->integer('pos');
-            $table->integer('neg');
-            $table->double('rating');
+            $table->integer('film_id')->default(0);
+            $table->integer('pos')->default(0);
+            $table->integer('neg')->default(0);
+            $table->double('rating')->default(0);
         });
     }
 
