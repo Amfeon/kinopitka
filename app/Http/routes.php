@@ -28,5 +28,14 @@ Route::post('/store','FilmController@store');
 Route::post('/store/{id}','FilmController@store');
 Route::get('/show/{id}','FilmController@show');
 Route::get('/delete/{id}','FilmController@drop');
-Route:: get('/rating','RatingController@showRating');
+Route::post('/rating','RatingController@showRating');
+Route::post('/ratingAdd','RatingController@calcRating'); //еужен будет посредник на отправку аякс
+
+
+
+/*Route::post('/rating', function (){
+    if(Request::ajax()){
+        return Request::all();
+    }
+});*/
 //Route:: post('rating','Rating@add');

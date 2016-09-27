@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Fonts -->
+    <meta name="_token" content="{!! csrf_token() !!}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
@@ -86,33 +86,54 @@
     @yield('content')
 
     <!-- JavaScripts -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script>
-        //var canvas = document.getElementById("myCanvas");
-        //var context = canvas.getContext("2d");
-        // сохраняем объект jCanvas в переменную
-        var $myCanvas = $('#myCanvas');
-
-        // сам прямоугольник
-        /*$myCanvas.drawRect({
-         fillStyle: 'steelblue',
-         strokeStyle: 'blue',
-         strokeWidth: 4,
-         x: 0, y: 0,
-         fromCenter: false,
-         width: 200,
-         height: 100
-         });*/
-        $("#myCanvas").click(function(e) {
-            var offset = $(this).offset();
-            var height=$(this).height();
-            var relativeX = (e.pageX - offset.left).toFixed();
-            var relativeY = (height - (e.pageY - offset.top)).toFixed();
-
-            alert("X: " + relativeX + "  Y: " + relativeY );
+    <script src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
         });
     </script>
+    <script>
+            $.ajax({
+                type: 'post',
+                url: '/rating',
+                data: {id:{{$film->id}}},
+                success: function (html) {
+                    //console.log(html);
+                    $("#rating").html(html);
+                    $("#negativ").data({'negativ': 1, 'positiv': 0});
+                    $("#positiv").data({'positiv': 1, 'negativ': 0});
+                    if($.cookie("cc"+{{$film->id}})!={{$film->id}}){
+                        $('#rating').on('click', '.botton', function () {
+
+                            var positiv = $(this).data("positiv");
+                            var negativ = $(this).data("negativ");
+                            // $( "body" ).data( "bar", "foobar" );
+                            // alert(negativ);
+                            // console.log(positiv);
+                            $.ajax({
+                                type:'POST',
+                                url:'/ratingAdd',
+                                data: {id: {{$film->id}}, positiv: positiv, negativ: negativ},
+                                success: function(html){
+                                    $("#rating").html(html);
+                                    $("#negativ").data({'negativ': 1, 'positiv': 0});
+                                    $("#positiv").data({'positiv': 1, 'negativ': 0});
+                                    $.cookie("cc"+{{$film->id}}, {{$film->id}}, { expires: 350});
+                                }
+                            });
+
+                        });
+                    }else{
+                        $(".botton,.qwestion").hide()
+                    }
+                }
+            });
+
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
     <script>
         (function(d,s,id){var js,stags=d.getElementsByTagName(s)[0];
             if(d.getElementById(id)){return;}js=d.createElement(s);js.id=id;

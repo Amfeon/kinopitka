@@ -19,16 +19,7 @@
 						<a href='http://www.imdb.com/title/{{$film->imdb}}' ><img alt='on IMDb' src='http://g-ecx.images-amazon.com/images/G/01/imdb/plugins/rating/images/imdb_46x22.png'>
 						</a></span>
 
-                        <script>
-                            $.ajax({
-                                type:'GET',
-                                url:'/rating',
-                                data: {id: {{$film->id}}},
-                                success: function(html){
-                                    $("#rating").html(html);
-                                }
-                            });
-                        </script>
+
                 @endif
                 </div>
 
@@ -57,8 +48,8 @@
                 <script type='text/javascript' src='//yastatic.net/share2/share.js' charset='utf-8'></script>
                 <div class='ya-share2' data-services='vkontakte,facebook,odnoklassniki,moimir,twitter,viber,whatsapp'></div>
             </div>
-            </div>
         </div>
+    </div>
 
     <article class="row">
         <div class="col-md-10 ">
@@ -79,8 +70,8 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$film->trailer}}" frameborder="0" allowfullscreen></iframe>
            @endif
     </div>
-    </div>
 </div>
+
     @endforeach
 
 @endsection

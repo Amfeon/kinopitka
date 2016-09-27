@@ -21,5 +21,8 @@ class Rating extends Model
     public function showRating($film_id){
         return DB::table('ratings')->where('film_id',$film_id)->first();
     }
+    public function updateRating($rating,$pos,$neg,$film_id){
+    return DB::update('UPDATE `ratings` SET rating=?, pos=?,neg=? WHERE film_id=?', [$rating,$pos,$neg,$film_id]);
+}
     
 }

@@ -14,7 +14,7 @@ class FilmController extends Controller
 {
     //
     public function mainPage(film $filmModel){
-       $films=DB::table('films')->where('Blu_ray','<=',Carbon::now())->simplePaginate(3);
+       $films=DB::table('films')->where('Blu_ray','<=',Carbon::now())->simplePaginate(2);
         //$films=$filmModel->mainPageGet());
         return view('home',['films'=>$films]);
     }
