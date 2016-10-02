@@ -28,4 +28,6 @@ body{
 iframe{
     width:70%;
 }
-
+.navbar-fixed-bottom{
+    position: absolute;
+}

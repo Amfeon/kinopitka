@@ -13,7 +13,7 @@
                 <div class="col-lg-5">
                     @if($film->release<=@date('Y-m-d'))
                     <a class="row" href="http://www.kinopoisk.ru/film/{{$film->kinopoisk}}/">
-                        <img  src="http://rating.kinopoisk.ru/{{$film->kinopoisk}}.gif">
+                        <img  src="http://rating.kinopoisk.ru/{{$film->kinopoisk}}.gif" alt="{{$film->title}}">
                     </a>
                     <span class='imdbRatingPlugin'  data-title='{{$film->imdb}}' data-style='p2'>
 						<a href='http://www.imdb.com/title/{{$film->imdb}}' ><img alt='on IMDb' src='http://g-ecx.images-amazon.com/images/G/01/imdb/plugins/rating/images/imdb_46x22.png'>
@@ -60,10 +60,6 @@
             <p>и по случайному стечению обстоятельств планета была густо населена, тут то и начинается замес...</p>
             {!!$film->plot!!}
         </div>
-
-
-
-
     </article>
     <div class="row ">
        @if($film->trailer!='')

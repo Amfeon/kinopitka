@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="ru">
 <head>
     <meta charset="utf-8">
@@ -23,7 +23,7 @@
         }
     </style>
     @if(!empty($film))
-    <meta description="{{$film->description}}@else Здесь вы можете найти дату выхода лицензии ожидаемого вами фильма.@endif">
+    <meta name="description" content="{{$film->description}}@else Здесь вы можете найти дату выхода лицензии ожидаемого вами фильма.@endif">
     <title>
 
         @if(isset($film->title))
@@ -59,6 +59,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/') }}">Даты выхода</a></li>
                     <li><a href="{{ url('/blu-ray') }}">Blu-Ray релизы</a></li>
+                    <li><a href="{{ url('/release-news') }}">Новости релизов</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -141,9 +142,9 @@
             stags.parentNode.insertBefore(js,stags);})(document,'script','imdb-rating-api');
     </script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
-<footer class="navbar-static-bottom" style="background: #1bb1b2;">
+<footer class="navbar-fixed-bottom" style="background: #1bb1b2; ">
     <div class="navbar-inner">
-rjynfrnbrb
+        Всякие прикольчики
      </div>
 </footer>
 </body>
