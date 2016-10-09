@@ -4,7 +4,7 @@
         @foreach($films as $film)
         <form class="form-horizontal" method="POST" action='/store/{{$film->id}}'>
 
-            <label class="control-label">imdb</label>  <div class="btn btn-info">Спарсить</div>
+            <label class="control-label">imdb</label>  <div  id="parse" class="btn btn-info">Спарсить</div>
             <input type="text" class="form-control"  name="imdb" value="{{$film->imdb}}">
 
             <label class="control-label">Kinopoisk</label>

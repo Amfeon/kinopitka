@@ -31,3 +31,29 @@ iframe{
 .navbar-fixed-bottom{
     position: absolute;
 }
+.main{
+    background: #eee;
+}
+.alert-info{
+    border-color: #1d7999;
+}
+img{
+    box-shadow: 0 0 10px #888888;
+}
+.arrow-left,.arrow-right {
+    color: #fff;
+  background:   #3291ef url("/image/arrow_r.jpg") no-repeat scroll center center;
+    padding-top: 20px;
+    height: 60px;
+    border-radius: 0 10px 10px 0px ;
+}
+.arrow-left{
+    border-radius: 10px 0px 0px 10px ;
+    background:   #3291ef url("/image/arrow_l.jpg") no-repeat scroll center center;
+}
+.arrow-left:hover {
+    background:   #2b86e1 url("/image/arrow_l_active.jpg") no-repeat scroll center center;
+}
+.arrow-right:hover{
+    background:   #2b86e1 url("/image/arrow_r_active.jpg") no-repeat scroll center center;
+}

@@ -32,7 +32,7 @@ Route::get('/delete/{id}','FilmController@drop');
 Route::post('/rating','RatingController@showRating');
 Route::post('/ratingAdd','RatingController@calcRating'); //еужен будет посредник на отправку аякс
 Route::get('/blu-ray/{data?}','FilmController@Blu_ray')->where(['data'=>'\w{3,9}\-\d{4}']);
-
+Route::get('/test','ParseController@parse');// поменять на парсер
 
 
 

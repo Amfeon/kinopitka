@@ -22,8 +22,8 @@
             margin-right: 6px;
         }
     </style>
-    @if(!empty($film))
-    <meta name="description" content="{{$film->description}}@else Здесь вы можете найти дату выхода лицензии ожидаемого вами фильма.@endif">
+
+    <meta name="description" content="@if(!empty($film)){{$film->description}}@else Здесь вы можете найти дату выхода лицензии ожидаемого вами фильма.@endif">
     <title>
 
         @if(isset($film->title))
@@ -93,6 +93,7 @@
             headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
         });
     </script>
+    @if(isset($film->id))
     <script>
             $.ajax({
                 type: 'post',
@@ -132,7 +133,7 @@
 
 
     </script>
-
+@endif
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
     <script>
