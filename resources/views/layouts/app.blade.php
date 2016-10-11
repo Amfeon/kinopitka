@@ -8,24 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/main.css" type="text/css"/>
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
-    <style>
-        body {
-            font-family: 'Lato';
-        }
-
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
-
-    <meta name="description" content="@if(!empty($film)){{$film->description}}@else Здесь вы можете найти дату выхода лицензии ожидаемого вами фильма.@endif">
+    <meta name="description" content="@if(!empty($film)){{$film->description}}@else Здесь вы можете найти дату выхода лицензии ожидаемого вами фильма на Blu-ray и HD.@endif">
     <title>
-
         @if(isset($film->title))
         {{$film->title}} / {{$film->original}}
             @else
@@ -57,8 +44,8 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/') }}">Даты выхода</a></li>
-                    <li><a href="{{ url('/blu-ray') }}">Blu-Ray релизы</a></li>
+                    <li ><a href="{{ url('/') }}">Даты выхода</a></li>
+                    <li class="{{'active'}}"><a href="{{ url('/blu-ray') }}">Blu-Ray релизы</a></li>
                     <li><a href="{{ url('/release-news') }}">Новости релизов</a></li>
                 </ul>
 
@@ -143,9 +130,20 @@
             stags.parentNode.insertBefore(js,stags);})(document,'script','imdb-rating-api');
     </script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
-<footer class="navbar-fixed-bottom" style="background: #1bb1b2; ">
-    <div class="navbar-inner">
-        Всякие прикольчики
+<footer class="navbar-fixed-bottom" style="background: #080808; ">
+    <div class="navbar-inner container">
+        <p>На сайте публикуются даты сугубо официальных релизов, собранных из зарубежных источников.</p>
+        <ul >
+            <li>
+                <a rel="nofollow" href="https://vk.com/amfeon90" title="Вконтакте">Я в Контактике</a>
+            </li>
+            <li >
+                <a rel="nofollow" href="http://www.youtube.com/channel/UCPK8GKDoB01K8e0NEOgO_sw" title="ТыТруба">Я в Ютубушке</a>
+            </li>
+            <li >
+                <a rel="author" href="https://plus.google.com/u/0/115214208930230673302">Я в Гугл+</a>
+            </li>
+        </ul>
      </div>
 </footer>
 </body>

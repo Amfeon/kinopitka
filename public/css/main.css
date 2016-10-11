@@ -2,8 +2,12 @@
     background: #3c3e42;
 }
 body{
-    background: #ccc;
+    background: #aaa;
     font-size: 16px;
+    font-family: 'Lato';
+}
+.fa-btn {
+    margin-right: 6px;
 }
 .progress{
  padding:0px;

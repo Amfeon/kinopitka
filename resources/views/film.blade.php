@@ -2,7 +2,7 @@
 
 @section('content')
     @foreach($film as $film)
-<div class="container" style="background: #fff;">
+<div class="container" style="background: #fff; border-radius: 10px">
     <h1 class="row alert alert-success">{{$film->title}} / {{$film->original}}</h1>
     <div class="row">
         <div class="col-sm-4 ">
