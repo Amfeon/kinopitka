@@ -15,8 +15,10 @@ Route::get('/film/{id}', 'FilmController@index')->where(['id'=>'[0-9]+']);
 Route::get('/', 'FilmController@mainPage');
 Route::post('/', 'FilmController@pagination');
 Route::get('admin',  'FilmController@admin');
-Route::auth();
 Route::get('/home', 'HomeController@index');
+Route::get('/blu-ray/{data?}','FilmController@Blu_ray')->where(['data'=>'\w{3,9}\-\d{4}']);
+Route::auth();
+
 /*Route::get('/create',['middleware'=> 'auth'
     ,'uses'=>'FilmController@create']);*/
 Route::get('/create','FilmController@create');
@@ -29,9 +31,9 @@ Route::get('/delete/{id}','FilmController@delete');
 Route::post('/store/{id?}','FilmController@store');
 Route::get('/show/{id}','FilmController@show');
 Route::get('/delete/{id}','FilmController@drop');
+
 Route::post('/rating','RatingController@showRating');
-Route::post('/ratingAdd','RatingController@calcRating'); //еужен будет посредник на отправку аякс
-Route::get('/blu-ray/{data?}','FilmController@Blu_ray')->where(['data'=>'\w{3,9}\-\d{4}']);
+Route::post('/ratingAdd','RatingController@calcRating'); //нужен будет посредник на отправку аякс
 Route::get('/test','ParseController@parse');// поменять на парсер
 
 

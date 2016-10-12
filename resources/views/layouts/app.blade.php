@@ -11,14 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/main.css" type="text/css"/>
 
-    <meta name="description" content="@if(!empty($film)){{$film->description}}@else Здесь вы можете найти дату выхода лицензии ожидаемого вами фильма на Blu-ray и HD.@endif">
-    <title>
-        @if(isset($film->title))
-        {{$film->title}} / {{$film->original}}
-            @else
-            График  Blu-ray и HD лицензированных релизов ожидаемых фильмов на Кинопытка.ru
-            @endif
-    </title>
+
 
 
 </head>

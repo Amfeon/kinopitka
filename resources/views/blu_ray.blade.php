@@ -1,6 +1,16 @@
-@extends('layouts.app')
+@extends('layouts.basic')
+@section('head')
+    <meta name="description" content="Здесь вы можете найти дату выхода лицензии ожидаемого вами фильма на Blu-ray и HD.">
+    <title>
+            График  Blu-ray и HD лицензированных релизов ожидаемых фильмов намеченных на @if(isset($data['now'])) {{$data['now']}} @endif Кинопытка.ru
+    </title>
+@endsection
+@section('menu')
+    <li ><a href="{{ url('/') }}">Даты выхода</a></li>
+    <li class="{{'active'}}"><a href="{{ url('/blu-ray') }}">Blu-Ray релизы</a></li>
+@endsection
 @section('content')
-    <div class="container">
+    <article class="container">
         <h1 class=" alert alert-info"> Blu-ray релизы запланированные на   {{$data['now']}}</h1>
         <div class="row">
             <ul id='scroll' class='list-inline'>
@@ -25,7 +35,6 @@
             <div class="col-sm-offset-2 col-sm-5 text-right arrow-right">
                 {{$data['next']}}
             </div></a>
-
         </div>
-    </div>
+    </article>
 @endsection

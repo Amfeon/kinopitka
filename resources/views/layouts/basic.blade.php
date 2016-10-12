@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/main.css" type="text/css"/>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     @yield('head')
 
 
@@ -65,63 +65,8 @@
 
 @yield('content')
 @yield('scripts')
-<!-- JavaScripts -->
-<script src="../js/jquery.cookie.js"></script>
-<script type="text/javascript">
-    $.ajaxSetup({
-        headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-    });
-</script>
-@if(isset($film->id))
-    <script>
-        $.ajax({
-            type: 'post',
-            url: '/rating',
-            data: {id:{{$film->id}}},
-            success: function (html) {
-                //console.log(html);
-                $("#rating").html(html);
-                $("#negativ").data({'negativ': 1, 'positiv': 0});
-                $("#positiv").data({'positiv': 1, 'negativ': 0});
-                if($.cookie("cc"+{{$film->id}})!={{$film->id}}){
-                    $('#rating').on('click', '.botton', function () {
-
-                        var positiv = $(this).data("positiv");
-                        var negativ = $(this).data("negativ");
-                        // $( "body" ).data( "bar", "foobar" );
-                        // alert(negativ);
-                        // console.log(positiv);
-                        $.ajax({
-                            type:'POST',
-                            url:'/ratingAdd',
-                            data: {id: {{$film->id}}, positiv: positiv, negativ: negativ},
-                            success: function(html){
-                                $("#rating").html(html);
-                                $("#negativ").data({'negativ': 1, 'positiv': 0});
-                                $("#positiv").data({'positiv': 1, 'negativ': 0});
-                                $.cookie("cc"+{{$film->id}}, {{$film->id}}, { expires: 350});
-                            }
-                        });
-
-                    });
-                }else{
-                    $(".botton,.qwestion").hide()
-                }
-            }
-        });
 
 
-    </script>
-@endif
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-<script>
-    (function(d,s,id){var js,stags=d.getElementsByTagName(s)[0];
-        if(d.getElementById(id)){return;}js=d.createElement(s);js.id=id;
-        js.src='http://g-ec2.images-amazon.com/images/G/01/imdb/plugins/rating/js/rating.min.js';
-        stags.parentNode.insertBefore(js,stags);})(document,'script','imdb-rating-api');
-</script>
-{{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 <footer class="navbar-fixed-bottom" style="background: #080808; ">
     <div class="navbar-inner container">
         <p>На сайте публикуются даты сугубо официальных релизов, собранных из зарубежных источников.</p>

@@ -1,7 +1,18 @@
-@extends('layouts.app')
-
-@section('content')
+@extends('layouts.basic')
+@section('head')
     @foreach($film as $film)
+    <meta name="description" content="{{$film->description}}">
+    <title>
+        {{$film->title}} / {{$film->original}} дата выхода и Blu-ray релиза
+    </title>
+
+@endsection
+@section('menu')
+    <li ><a href="{{ url('/') }}">Даты выхода</a></li>
+    <li class="{{'active'}}"><a href="{{ url('/blu-ray') }}">Blu-Ray релизы</a></li>
+@endsection
+@section('content')
+
 <div class="container" style="background: #fff; border-radius: 10px">
     <h1 class="row alert alert-success">{{$film->title}} / {{$film->original}}</h1>
     <div class="row">
@@ -70,4 +81,54 @@
 
     @endforeach
 
+@endsection
+@section('scripts')
+    <!-- JavaScripts -->
+    <script src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+        });
+    </script>
+
+    <script>
+        $.ajax({
+            type: 'post',
+            url: '/rating',
+            data: {id:{{$film->id}}},
+            success: function (html) {
+                $("#rating").html(html);
+                $("#negativ").data({'negativ': 1, 'positiv': 0});
+                $("#positiv").data({'positiv': 1, 'negativ': 0});
+                if($.cookie("cc"+{{$film->id}})!={{$film->id}}){
+                    $('#rating').on('click', '.botton', function () {
+                        var positiv = $(this).data("positiv");
+                        var negativ = $(this).data("negativ");
+                        // $( "body" ).data( "bar", "foobar" );
+                        // alert(negativ);
+                        // console.log(positiv);
+                        $.ajax({
+                            type:'POST',
+                            url:'/ratingAdd',
+                            data: {id: {{$film->id}}, positiv: positiv, negativ: negativ},
+                            success: function(html){
+                                $("#rating").html(html);
+                                $("#negativ").data({'negativ': 1, 'positiv': 0});
+                                $("#positiv").data({'positiv': 1, 'negativ': 0});
+                                $.cookie("cc"+{{$film->id}}, {{$film->id}}, { expires: 350});
+                            }
+                        });
+                    });
+                }else{
+                    $(".botton,.qwestion").hide()
+                }
+            }
+        });
+    </script>
+    <script>
+        (function(d,s,id){var js,stags=d.getElementsByTagName(s)[0];
+            if(d.getElementById(id)){return;}js=d.createElement(s);js.id=id;
+            js.src='http://g-ec2.images-amazon.com/images/G/01/imdb/plugins/rating/js/rating.min.js';
+            stags.parentNode.insertBefore(js,stags);})(document,'script','imdb-rating-api');
+    </script>
 @endsection

@@ -12,18 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
     <link rel="stylesheet" href="css/main.css" type="text/css"/>
-
-    <style>
-        body {
-            font-family: 'Lato';
-        }
-
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
         <title>
                 График выхода фильмов в кино, Blu-ray и HD лицензированных релизов ожидаемых фильмов на Кинопытка.ru
         </title>
@@ -52,7 +41,7 @@
             <ul class="nav navbar-nav">
                 <li class="{{'active'}}"><a href="{{ url('/') }}">Даты выхода</a></li>
                 <li><a href="{{ url('/blu-ray') }}">Blu-Ray релизы</a></li>
-                <li><a href="{{ url('/release-news') }}">Новости релизов</a></li>
+
             </ul>
 
             <!-- Right Side Of Navbar -->
