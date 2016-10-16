@@ -1,5 +1,5 @@
 <?php
-        echo 'fuck you';
+        echo 'Залогинься';
 /**
  * Created by PhpStorm.
  * User: Amfeon

@@ -14,7 +14,7 @@
 Route::get('/film/{id}', 'FilmController@index')->where(['id'=>'[0-9]+']);
 Route::get('/', 'FilmController@mainPage');
 Route::post('/', 'FilmController@pagination');
-Route::get('admin',  'FilmController@admin');
+Route::get('admin',['middleware'=> 'auth', 'uses'=>  'FilmController@admin']);
 Route::get('/home', 'HomeController@index');
 Route::get('/blu-ray/{data?}','FilmController@Blu_ray')->where(['data'=>'\w{3,9}\-\d{4}']);
 Route::auth();

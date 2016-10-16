@@ -70,9 +70,12 @@ class FilmController extends Controller
         $rating->delete($request->id);
         return redirect('/update');
     }
+
     public function admin(){
+       // $this->authorize('admin');
         return view('layouts.admin');
     }
+
     public function Blu_ray($data=null){
         if($data!=null){
             $mass=explode('-',$data);
