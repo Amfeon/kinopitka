@@ -78,7 +78,7 @@
 
             $.ajax({
                 type:'GET',
-                url: "test",
+                url: "parse",
                 cache: false,
                 data: {url: url},
                 success: function(html){

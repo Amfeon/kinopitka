@@ -38,11 +38,12 @@ class FilmController extends Controller
         return view('film',['film' => $film]);
     }
     public  function create(){
-        //$this->authorize('create'); // <---- вот это важная строчка
+        $this->authorize('admin');
         return view('create');
     }
     public function store($id=null,Request $request, film $kino, Rating $rating)
     {
+        $this->authorize('admin');
         $this->validate($request,[
             'title'=>'required'
         ]);
@@ -57,6 +58,7 @@ class FilmController extends Controller
 
     }
     public function showUpdate(Request $request,Film $filmModel){
+        $this->authorize('admin');
         if (isset($request->id)){
             $films=$filmModel->getUpdatedFilm($request->id);
             return view('updateForm',['films'=>$films]);
@@ -66,13 +68,14 @@ class FilmController extends Controller
         }
     }
     public function drop(Request $request, film $filmModel, rating $rating ){
+        $this->authorize('admin');
         $films=$filmModel->drop($request->id);// создать получение всех записей
         $rating->delete($request->id);
         return redirect('/update');
     }
 
     public function admin(){
-       // $this->authorize('admin');
+        $this->authorize('admin');
         return view('layouts.admin');
     }
 

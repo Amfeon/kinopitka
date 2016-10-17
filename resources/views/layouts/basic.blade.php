@@ -67,7 +67,7 @@
 @yield('scripts')
 
 
-<footer class="navbar-fixed-bottom" style="background: #080808; ">
+<footer class="row" style="background: #080808; ">
     <div class="navbar-inner container">
         <p>На сайте публикуются даты сугубо официальных релизов, собранных из зарубежных источников.</p>
         <ul >
