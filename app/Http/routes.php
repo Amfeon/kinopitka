@@ -13,12 +13,13 @@
 Route::auth();
 Route::group(['middleware'=> 'auth'],function(){
     Route::get('admin', 'FilmController@admin');
-    Route::get('/create','FilmController@create');
+    Route::get('/create/','FilmController@create');
     Route::get('/edit/{id}','FilmController@edit');
     Route::post('/update/{id}','FilmController@update');
     Route::get('/update','FilmController@showUpdate');
     Route::get('/update/{id}','FilmController@showUpdate');
     Route::get('/delete/{id}','FilmController@delete');
+    //Route::post('/store','FilmController@store');
     Route::post('/store/{id?}','FilmController@store');
     Route::get('/show/{id}','FilmController@show');
     Route::get('/delete/{id}','FilmController@drop');
@@ -32,6 +33,10 @@ Route::get('/blu-ray/{data?}','FilmController@Blu_ray')->where(['data'=>'\w{3,9}
 Route::post('/rating','RatingController@showRating');
 Route::post('/ratingAdd','RatingController@calcRating'); //нужен будет посредник на отправку аякс
 Route::get('/parse','ParseController@parse');// поменять на парсер
+Route::get('/parse_blu_ray','ParseController@parse_blu_ray');
+
+Route::get('/profile','UserController@profile');
+Route::post('/profile','UserController@update_avatar');
 
 
 /*Route::get('/create',['middleware'=> 'auth'

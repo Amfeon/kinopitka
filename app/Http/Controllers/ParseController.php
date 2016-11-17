@@ -69,18 +69,21 @@ class ParseController extends Controller
             foreach ($all->find('//*[@id="title-overview-widget"]/div[2]/div[2]/div/div/div[2]/h1') as $link) {
 
                 $title = $link->innertext;
-                $title = preg_replace('~<span.*<\/span>~', '', $title);
+                 $title = preg_replace('~<span.*<\/span>~', '', $title);
                 if (!preg_match('/[а-я]{3,}/iu', $title)) { //Если название нерусское
-                    echo $flag = 1;
+                     $flag = 1;
                 } else {
-                    foreach ($all->find('//*[@id="title-overview-widget"]/div[2]/div[2]/div/div[2]/div[2]/div[1]') as $link) {
-                        $original = $link->innertext;
+                    foreach ($all->find('//*[@id="title-overview-widget"]/div[2]/div[2]/div/div/div[2]/div[1]') as $link) {
+                        echo $original = $link->innertext;
+                        if($original==null){
+                            $original='need Add';
+                        }
                     }
                 }
             }
 
             $russia = 0;
-            $russia = substr_count($data, '(Russia)');
+            $russia = substr_count($data, '(Russia)');// наличие отечественного названия
             if ($russia != 0) {
                 // echo "Отечественная дата:<br>";
                 preg_match('~[[:digit:]]{1,2} [[:alpha:]]{3,9} [[:digit:]]{4}~', $data, $array);
@@ -89,7 +92,7 @@ class ParseController extends Controller
             }
 
             $title = trim($title);
-            if ($flag == 1) {
+            if ($flag == 1) {// если нерусское
                 $original = $title;
             } else {
                 $original = preg_replace('~<span.*<\/span>~', '', $original);
@@ -160,6 +163,29 @@ class ParseController extends Controller
                 return $link;
             }
         }
+    public function parse_blu_ray(Request $request){
+         $url =  'http://www.dvdsreleasedates.com/movies/7349/the-magnificent-seven';
+         $url =  'http://www.dvdsreleasedates.com/movies/7416/the-accountant';
+       //  $url =  'http://www.dvdsreleasedates.com/movies/6184/Resident-Evil-6-The-Final-Chapter-2016.html';
+        $simpleHTML = new Htmldom();
+        $all = $simpleHTML->file_get_html($url);
+        foreach ($all->find('//*[@id="leftcolumn"]/div[2]/div[1]/table/tbody/tr/td[2]/table/tbody/tr[1]/td/h2/span[1]') as $link) {
+            echo "Дата анонсирована цифровая<br>";
+             $data=$link->innertext;
+            echo $data=preg_replace('~is estimated for~', '', $data);
+        }
+        if($data=='not announced'){
+            echo 'Дата не аннонсирована';
+        }else{
+            foreach ($all->find('//*[@id="leftcolumn"]/div[2]/div[1]/table/tbody/tr/td[2]/table/tbody/tr[1]/td/h2/span[2]') as $link) {
+                $itunes_date=$link->innertext;
+                if($itunes_date!='not announced'){
+                    echo "Дата выхода:<br>";
+                   echo $data=$itunes_date;
+                }
+            }
+        }
+    }
 }
 
 

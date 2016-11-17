@@ -50,10 +50,12 @@
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <img src="/image/avatar/{{Auth::user()->avatar}}" style="width:40px; height: 40px; border-radius: 50%; float:left; margin-right: 25px; ">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('/profile') }}"><i class="fa fa-btn fa-user"></i>Профиль</a></li>
                             <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Выйти</a></li>
                         </ul>
                     </li>
@@ -67,21 +69,6 @@
 @yield('scripts')
 
 
-<footer class="row" style="background: #080808; ">
-    <div class="navbar-inner container">
-        <p>На сайте публикуются даты сугубо официальных релизов, собранных из зарубежных источников.</p>
-        <ul >
-            <li>
-                <a rel="nofollow" href="https://vk.com/amfeon90" title="Вконтакте">Я в Контактике</a>
-            </li>
-            <li >
-                <a rel="nofollow" href="http://www.youtube.com/channel/UCPK8GKDoB01K8e0NEOgO_sw" title="ТыТруба">Я в Ютубушке</a>
-            </li>
-            <li >
-                <a rel="author" href="https://plus.google.com/u/0/115214208930230673302">Я в Гугл+</a>
-            </li>
-        </ul>
-    </div>
-</footer>
+
 </body>
 </html>

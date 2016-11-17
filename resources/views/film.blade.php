@@ -116,6 +116,7 @@
                                 $("#negativ").data({'negativ': 1, 'positiv': 0});
                                 $("#positiv").data({'positiv': 1, 'negativ': 0});
                                 $.cookie("cc"+{{$film->id}}, {{$film->id}}, { expires: 350});
+                                $(".botton,.qwestion").hide()
                             }
                         });
                     });

@@ -41,18 +41,39 @@ class FilmController extends Controller
         $this->authorize('admin');
         return view('create');
     }
-    public function store($id=null,Request $request, film $kino, Rating $rating)
+    public function store(Request $request, film $kino, Rating $rating)
     {
         $this->authorize('admin');
         $this->validate($request,[
             'title'=>'required'
         ]);
-            if ($id!=null) {
-                $kino->updateFilm($request->all(), $id);
+            if ($request->id!=null) {
+                $kino->updateFilm($request->all(), $request->id);
                 return redirect('/admin');
             } else {
-                $id=$kino->createFilm($request->all());
-                $rating->addFilm($id);
+                preg_match('~[0-9]{4,}~',$request->kinopoisk,$a);
+                $kinopoisk=$a[0];
+                preg_match('~tt.[0-9]{1,}~',$request->imdb,$a);
+                $imdb=$a[0];
+                $id = film::insertGetId(
+                    [   'title' => $request->title,
+                        'original' => $request->original,
+                        'image' => $request->image,
+                        'plot' => $request->text,
+                        'imdb' => $imdb,
+                        'Blu_ray' => $request->Blu_ray,
+                        'release' => $request->release,
+                        'description' => $request->description,
+                        'created_at' => Carbon::now(),
+                        'updated_at' => Carbon::now(),
+                        'DVD_source' => $request->DVD_sourse,
+                        'kinopoisk' => $kinopoisk,
+                        'director' => $request->director,
+                        'actors' => $request->actors,
+                        'trailer' => $request->trailer
+                    ]);
+              // $id=$kino->createFilm($request->all());
+               $rating->addFilm($id);
                 return redirect('/admin');
             }
 
@@ -96,7 +117,7 @@ class FilmController extends Controller
             $prev_year=$mass[1];
             if ($prev_month==0){
                echo $prev_month=12;
-                $prev_year=$mass[1]-1;
+                $prev_year=$mass[1]-1; //предыдущий год
             }
             $prev_month=$this->IntToString($prev_month);
             $dt=Carbon::now()->month;
@@ -121,17 +142,26 @@ class FilmController extends Controller
         }else{
             $carbon=Carbon::now()->month;
             $year=Carbon::now()->year;
+            $prev_year=$next_year=$year;
             $film= DB::select('select * from films where MONTH(Blu_ray)=? AND YEAR(Blu_ray)=?', [$carbon,$year]);// нужна проверка успешности запроса
             $month=$carbon;
             $next_month=$month+1;
+            if($next_month==13){ // определение Января нового года
+                $next_month=1;
+                $next_year=$year+1;
+            }
             $next_month=$this->IntToString($next_month);
             //предыдущий месяц
             $prev_month=$month-1;
+            if($prev_month==0){
+                $prev_year=$year-1;
+                $prev_month=12;
+            }
             $prev_month=$this->IntToString($prev_month);
             $now=trans('month.'.$this->IntToString($carbon).'');
 
-            $data=['next'=>''.$next_month.'-2016',
-                    'prev'=>''.$prev_month.'-2016',
+            $data=['next'=>''.$next_month.'-'.$next_year,
+                    'prev'=>''.$prev_month.'-'.$prev_year,
                     'now'=>''.$now.'-'.$year
             ];
            return view('blu_ray',['films'=>$film,'data'=>$data]);

@@ -18,6 +18,7 @@
         </title>
 </head>
 <body id="app-layout">
+
 <nav class="navbar navbar-inverse navbar-static-top">
     <div class="container">
         <div class="navbar-header">
@@ -53,10 +54,12 @@
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <img src="/image/avatar/{{Auth::user()->avatar}}" style="width:40px; height: 40px; border-radius: 50%; float:left; margin-right: 25px; ">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('/profile') }}"><i class="fa fa-btn fa-user"></i>Профиль</a></li>
                             <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Выйти</a></li>
                         </ul>
                     </li>
@@ -67,7 +70,7 @@
 </nav>
 <div class="container">
     <h1 class="alert alert-info">Даты выхода наиболее ожидаемых фильмов</h1>
-    <div class="row">
+    <article class="row">
         <ul id='scroll' class='list-inline'>
             @foreach($films as $film)
                 <li>
@@ -81,10 +84,13 @@
                 </li>
             @endforeach
         </ul>
-    </div>
+    </article>
     <div id="more" class="row btn btn-warning" style="width: 100%;border: 2px solid #D5AB55">
         Показать еще
     </div>
+    <footer class="row">
+        dczrjt
+    </footer>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script type="text/javascript">
@@ -120,22 +126,5 @@
         return false
     })
 </script>
-{{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
-<footer class="navbar-fixed-bottom" style="background: #080808;">
-    <div class="navbar-inner container">
-        <p>На сайте публикуются даты сугубо официальных релизов, собранных из зарубежных источников.</p>
-        <ul >
-            <li>
-                <a rel="nofollow" href="https://vk.com/amfeon90" title="Вконтакте">Я в Контактике</a>
-            </li>
-            <li >
-                <a rel="nofollow" href="http://www.youtube.com/channel/UCPK8GKDoB01K8e0NEOgO_sw" title="ТыТруба">Я в Ютубушке</a>
-            </li>
-            <li >
-                <a rel="author" href="https://plus.google.com/u/0/115214208930230673302">Я в Гугл+</a>
-            </li>
-        </ul>
-    </div>
-</footer>
 </body>
 </html>
