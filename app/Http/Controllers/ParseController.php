@@ -165,26 +165,45 @@ class ParseController extends Controller
         }
     public function parse_blu_ray(Request $request){
          $url =  'http://www.dvdsreleasedates.com/movies/7349/the-magnificent-seven';
-         $url =  'http://www.dvdsreleasedates.com/movies/7416/the-accountant';
+         //$url =  'http://www.dvdsreleasedates.com/movies/7416/the-accountant';
        //  $url =  'http://www.dvdsreleasedates.com/movies/6184/Resident-Evil-6-The-Final-Chapter-2016.html';
         $simpleHTML = new Htmldom();
         $all = $simpleHTML->file_get_html($url);
         foreach ($all->find('//*[@id="leftcolumn"]/div[2]/div[1]/table/tbody/tr/td[2]/table/tbody/tr[1]/td/h2/span[1]') as $link) {
-            echo "Дата анонсирована цифровая<br>";
              $data=$link->innertext;
-            echo $data=preg_replace('~is estimated for~', '', $data);
+             $data=preg_replace('~is estimated for~', '', $data);
         }
         if($data=='not announced'){
-            echo 'Дата не аннонсирована';
+          //  echo 'Дата не аннонсирована';
+            $data=null;
         }else{
             foreach ($all->find('//*[@id="leftcolumn"]/div[2]/div[1]/table/tbody/tr/td[2]/table/tbody/tr[1]/td/h2/span[2]') as $link) {
                 $itunes_date=$link->innertext;
                 if($itunes_date!='not announced'){
-                    echo "Дата выхода:<br>";
-                   echo $data=$itunes_date;
+                    $data=$itunes_date;
                 }
             }
         }
+        //Фишка с месяцем
+        if($data!=null){
+            Echo $data.'<br>';
+            $mass=explode(',',$data);
+            if (isset($mass[1])){
+                $year=$mass[1];
+                $temp=explode(' ',$mass[0]);
+                echo $day=$temp[0];
+                echo $month=$temp[1];
+                
+            }else{
+                $temp=explode(' ',$mass[0]);
+                $month=$temp[1];
+                $year=$temp[2];
+                ECHO $month.'-'.$year;
+            }
+
+        }
+
+
     }
 }
 

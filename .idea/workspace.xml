@@ -2,106 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ff51a94-975f-408d-8894-e32174f46eba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/DAsf-1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTA5OTA2MTI5MTleQTJeQWpwZ15BbWU3MDI4MzIwOTk.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTEwNTU2MjAwMDdeQTJeQWpwZ15BbWU3MDk2Njc2Njk.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTEyMjE3MTIyNTleQTJeQWpwZ15BbWU3MDc2MDI5ODc.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTEzNDQ4NzM4MjFeQTJeQWpwZ15BbWU4MDI4NjY0MDAx.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTI0MjkxOTg1Nl5BMl5BanBnXkFtZTYwNjgyODgz.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTI3OTcyNTI5MV5BMl5BanBnXkFtZTYwMDE0NDQ3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTQ0MDA2ODE2Ml5BMl5BanBnXkFtZTcwMjI0Nzc3Nw.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTQ4ODA5MTA4OF5BMl5BanBnXkFtZTgwNjMyODM5MTE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTQ5OTYwMjk0Ml5BMl5BanBnXkFtZTgwMjk0ODA0MjE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTQwMjEyODQxMV5BMl5BanBnXkFtZTgwMDQxMjE3MDE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTQwMzQ5Njk1MF5BMl5BanBnXkFtZTcwNjIxNzIxNw.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTQwNjU5MzUzNl5BMl5BanBnXkFtZTYwMzc1MTI3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTQwNzI5NTQ0OF5BMl5BanBnXkFtZTYwMTI3Mjk2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTU4NzMyNDk1OV5BMl5BanBnXkFtZTcwOTEwMzU1MQ.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTUxMzcxNzQzOF5BMl5BanBnXkFtZTcwMzQxNjUyMw.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTUzMDc4NTEzMV5BMl5BanBnXkFtZTgwNjcyMjUwNjE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTY3Nzk5NTM4MF5BMl5BanBnXkFtZTgwNTg4OTAwMTE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTY4NTQzMDcxMl5BMl5BanBnXkFtZTcwNTEwNTYyMg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTYxMzYwODE4OV5BMl5BanBnXkFtZTgwNDE5MzE2MDE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTc0ODI1NTEwOF5BMl5BanBnXkFtZTgwNTEyNDYyMTE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTc3ODU2NTk5MF5BMl5BanBnXkFtZTgwMjE4ODIzMzE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTc5MjQ5ODQ4Nl5BMl5BanBnXkFtZTcwNTMyMDA2Nw.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTczOTM2ODk5OV5BMl5BanBnXkFtZTgwOTEzNzM5MjE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTg0NTgxMjIxOF5BMl5BanBnXkFtZTcwMDM0MDY1OQ.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTg0NjEwNjUxM15BMl5BanBnXkFtZTcwMzk0MjQ5Mg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTg1OTk0ODMxNl5BMl5BanBnXkFtZTcwMjQ1OTUxMg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTgyMzc4ODU3NV5BMl5BanBnXkFtZTcwNjk5Mzc1MQ.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMTk5MzU1MDMwMF5BMl5BanBnXkFtZTcwNjczODMzMw.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMjA4MDU0NTUyN15BMl5BanBnXkFtZTgwMzQxMzY4MjE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMjAwOTY1MTcxNV5BMl5BanBnXkFtZTgwODEzMjc3OTE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMjAxMjE1NTEyMF5BMl5BanBnXkFtZTcwMDgxODkzMQ.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMjAzNTkzNjcxNl5BMl5BanBnXkFtZTYwNDA4NjE3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMjAzNTkzNjcxNl5BMl5BanBnXkFtZTYwNDA4NjE3_002.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMjE0NDcyOTM5NF5BMl5BanBnXkFtZTgwMTkzMDEyNzE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMjEwNTg1MTA5Nl5BMl5BanBnXkFtZTgwOTg2OTM4MTE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMjI3NTA5NzczNl5BMl5BanBnXkFtZTgwNDQ3ODEyMDE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMjMwMzk3Njc1N15BMl5BanBnXkFtZTgwMDAwODcyMzE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMjQ1MDk0ODk5MV5BMl5BanBnXkFtZTgwMTE3NDA4ODE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BMzIwMjIwNjg0M15BMl5BanBnXkFtZTgwOTI3MDEzMDE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BNDc2NTM3MzU1Nl5BMl5BanBnXkFtZTcwMTA5Mzg3OA.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BNTMzMzAwMzEwOV5BMl5BanBnXkFtZTgwODE5NDQyMTE.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BNTUwODQyNjM0NF5BMl5BanBnXkFtZTcwNDMwMTU1Mw.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BNTUzNTgyMjIxNV5BMl5BanBnXkFtZTcwNDU5ODAxNw.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/MV5BODM2MDIxOTYxN15BMl5BanBnXkFtZTcwNTQyNDcyNA.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/a.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/a_002.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/a_003.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/a_004.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/a_005.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/a_006.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/a_007.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/a_008.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/a_009.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/a_010.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/a_011.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/a_data_009/Footwear-300x250-ExpressShipping-Rz4Pa.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/a_data_009/cvo.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/a_data_009/imp.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/a_data_010/728x90-PreFallEvergreen-Bags-ExpressShipping-UwgaV.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/a_data_010/blank_pixel.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/a_data_010/cvo.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/a_data_010/imp.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/ads" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/ads-tarnhelm-2938105029.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/beacon-1792157672.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/common-347239225.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/film-184890147.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/imdb_46x22-2264473254.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/imdb_star_22x21-2889147855.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/imdbpro_logo_menu-2185879182.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/imdbpro_logo_nb-720143162.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/imdbpro_menu_user-2082544740.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/name-2138558783.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/title-3468667429.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/title-flat-v2-1816057392.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/twitter.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/twitter_data/a.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/ue-full-051542d0cfa6f645f8266601739de597.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/unknown.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/watchlist_slot1_logged_out-1670046337.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/watchlist_slot2_popular-4090757197.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/parse/test_files/watchlist_slot3_top250-575799966.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FilmController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FilmController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ParseController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ParseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/main.css" afterPath="$PROJECT_DIR$/public/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/film.blade.php" afterPath="$PROJECT_DIR$/resources/views/film.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/basic.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/basic.blade.php" />
     </list>
     <ignored path="laravel-test.ru.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -133,8 +35,8 @@
       <file leaf-file-name="ParseController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ParseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="174" column="16" selection-start-line="174" selection-start-column="16" selection-end-line="174" selection-end-column="16" />
+            <state relative-caret-position="502">
+              <caret line="193" column="35" selection-start-line="193" selection-start-column="35" selection-end-line="193" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -143,7 +45,7 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="595">
               <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="26" />
               <folding />
             </state>
@@ -260,6 +162,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -434,8 +338,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -574,23 +476,26 @@
       <workItem from="1479124722421" duration="639000" />
       <workItem from="1479135710336" duration="3519000" />
       <workItem from="1479309815062" duration="2302000" />
+      <workItem from="1479645648354" duration="4699000" />
+      <workItem from="1479733680496" duration="1414000" />
+      <workItem from="1479815605488" duration="593000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="390050000" />
+    <option name="totallyTimeSpent" value="396756000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1932" height="1056" extended-state="1" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24732906" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2553419" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39243242" sideWeight="0.43963677" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39135134" sideWeight="0.56036323" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39135134" sideWeight="0.56036323" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -942,7 +847,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
+        <state relative-caret-position="595">
           <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="26" />
           <folding />
         </state>
@@ -950,8 +855,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ParseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="174" column="16" selection-start-line="174" selection-start-column="16" selection-end-line="174" selection-end-column="16" />
+        <state relative-caret-position="502">
+          <caret line="193" column="35" selection-start-line="193" selection-start-column="35" selection-end-line="193" selection-end-column="35" />
           <folding />
         </state>
       </provider>
