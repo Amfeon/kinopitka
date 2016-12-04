@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Yangqi\Htmldom\Htmldom;
 use App\Http\Requests;
+use App\film;
 use Symfony\Component\DomCrawler\Crawler;
 
 class ParseController extends Controller
@@ -65,15 +67,24 @@ class ParseController extends Controller
 
                 }
             }
-
+            $russia = 0;
+            $russia = substr_count($data, '(Russia)');// наличие отечественного названия
+            if ($russia != 0) {
+                // echo "Отечественная дата:<br>";
+                preg_match('~[[:digit:]]{1,2} [[:alpha:]]{3,9} [[:digit:]]{4}~', $data, $array);
+                $date = explode(' ', $array[0]);
+                $data = $date[2] . '-' . $this->dat($date[1]) . '-' . $date[0];
+            }else{
+                $data=Carbon::now();
+            }
             foreach ($all->find('//*[@id="title-overview-widget"]/div[2]/div[2]/div/div/div[2]/h1') as $link) {
-
                 $title = $link->innertext;
                  $title = preg_replace('~<span.*<\/span>~', '', $title);
                 if (!preg_match('/[а-я]{3,}/iu', $title)) { //Если название нерусское
                      $flag = 1;
                 } else {
                     foreach ($all->find('//*[@id="title-overview-widget"]/div[2]/div[2]/div/div/div[2]/div[1]') as $link) {
+                                         //*[@id="title-overview-widget"]/div[2]/div[2]/div/div[2]/div[2]/div[1]
                         echo $original = $link->innertext;
                         if($original==null){
                             $original='need Add';
@@ -82,14 +93,7 @@ class ParseController extends Controller
                 }
             }
 
-            $russia = 0;
-            $russia = substr_count($data, '(Russia)');// наличие отечественного названия
-            if ($russia != 0) {
-                // echo "Отечественная дата:<br>";
-                preg_match('~[[:digit:]]{1,2} [[:alpha:]]{3,9} [[:digit:]]{4}~', $data, $array);
-                $date = explode(' ', $array[0]);
-                $data = $date[2] . '-' . $this->dat($date[1]) . '-' . $date[0];
-            }
+
 
             $title = trim($title);
             if ($flag == 1) {// если нерусское
@@ -163,47 +167,70 @@ class ParseController extends Controller
                 return $link;
             }
         }
-    public function parse_blu_ray(Request $request){
-         $url =  'http://www.dvdsreleasedates.com/movies/7349/the-magnificent-seven';
-         //$url =  'http://www.dvdsreleasedates.com/movies/7416/the-accountant';
-       //  $url =  'http://www.dvdsreleasedates.com/movies/6184/Resident-Evil-6-The-Final-Chapter-2016.html';
+    public function parse_blu_ray($url){
+        // $url =  'http://www.dvdsreleasedates.com/movies/7349/the-magnificent-seven';
+        // $url =  'http://www.dvdsreleasedates.com/movies/7416/the-accountant';
+        // $url =  'http://www.dvdsreleasedates.com/movies/6184/Resident-Evil-6-The-Final-Chapter-2016.html';
         $simpleHTML = new Htmldom();
         $all = $simpleHTML->file_get_html($url);
         foreach ($all->find('//*[@id="leftcolumn"]/div[2]/div[1]/table/tbody/tr/td[2]/table/tbody/tr[1]/td/h2/span[1]') as $link) {
-             $data=$link->innertext;
-             $data=preg_replace('~is estimated for~', '', $data);
+            $data = $link->innertext;
+            $data = preg_replace('~is estimated for~', '', $data);
         }
-        if($data=='not announced'){
-          //  echo 'Дата не аннонсирована';
-            $data=null;
-        }else{
+        if ($data == 'not announced') {
+            return 0;
+            //$data=null;
+        } else {
             foreach ($all->find('//*[@id="leftcolumn"]/div[2]/div[1]/table/tbody/tr/td[2]/table/tbody/tr[1]/td/h2/span[2]') as $link) {
-                $itunes_date=$link->innertext;
-                if($itunes_date!='not announced'){
-                    $data=$itunes_date;
+                $itunes_date = $link->innertext;
+                if ($itunes_date != 'not announced') {
+                    $data = $itunes_date;
                 }
             }
         }
         //Фишка с месяцем
-        if($data!=null){
-            Echo $data.'<br>';
-            $mass=explode(',',$data);
-            if (isset($mass[1])){
-                $year=$mass[1];
-                $temp=explode(' ',$mass[0]);
-                echo $day=$temp[0];
-                echo $month=$temp[1];
-                
-            }else{
-                $temp=explode(' ',$mass[0]);
-                $month=$temp[1];
-                $year=$temp[2];
-                ECHO $month.'-'.$year;
-            }
-
+        //  if($data!=null){
+        $mass = explode(',', $data);
+        if (isset($mass[1])) {
+            $year = $mass[1];
+            $temp = explode(' ', $mass[0]);
+            $day = $temp[1];
+            $month = $temp[0];
+            $month = $this->dat($month);
+            $date = $year . '-' . $month . '-' . $day;
+        } else {
+            $temp = explode(' ', $mass[0]);
+            $month = $temp[1];
+            $month = $this->dat($month);
+            $year = $temp[2];
+            $day = 23;
+            $date = $year . '-' . $month . '-' . $day;
         }
+        return $date;
 
 
+    }
+    //обновление DVD релизов
+    public function update_Blu_ray(){
+        $updated_films =Film::select('id' ,'Blu_ray','DVD_source')-> whereBetween('Blu_ray',[Carbon::now()->subWeekday(),Carbon::now()->addMonth()])
+            ->get();
+       foreach ($updated_films as $film){
+           //доделать функцию обновления даты
+          $new_date=$this->parse_blu_ray($film->DVD_source);
+           if($new_date!=0){
+               $new_date=trim($new_date);
+                if($new_date!=$film->Blu_ray){
+                    //Сделать функцию добавления в новости
+                    $film_model=Film::find($film->id);
+                    $film_model->Blu_ray=$new_date;
+                    $film_model->save();
+                    echo "Дата изменена";
+                }else{
+                    echo "Даты совпали";
+                    continue;
+                }
+           }
+       }
     }
 }
 
