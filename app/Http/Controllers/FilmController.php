@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\film;
 use App\Rating;
 use DB;
+use App\Http\Controllers\ParseController;
 use Carbon\Carbon;
 use Illuminate\Pagination\Paginator;
 
@@ -82,6 +83,11 @@ class FilmController extends Controller
         $this->authorize('admin');
         if (isset($request->id)){
             $films=$filmModel->getUpdatedFilm($request->id);
+             $Blu_ray=ParseController::parse_blu_ray($request->id);// получаем спарсенную дату
+            if ($Blu_ray==0){
+                $Blu_ray='Дата не анонсирована';
+            }
+            $mass_date=['Blu_ray'=>$Blu_ray];
             return view('updateForm',['films'=>$films]);
         }else{
             $films=$filmModel->getFilm();// создать получение всех записей

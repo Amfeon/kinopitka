@@ -15,15 +15,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css" >
+    <link rel="stylesheet" href="/css/main.css" >
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
-
-
-
     <style>
         body {
             font-family: 'Lato';
+            background: white;
         }
 
         .fa-btn {
@@ -53,8 +51,10 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
+                <li><a href="{{ url('/admin') }}">Главная</a></li>
                 <li><a href="{{ url('/create') }}">Создать</a></li>
                 <li><a href="{{ url('/update') }}">Обновить</a></li>
+
             </ul>
 
             <!-- Right Side Of Navbar -->
