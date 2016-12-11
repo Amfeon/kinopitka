@@ -79,16 +79,20 @@ class FilmController extends Controller
             }
 
     }
-    public function showUpdate(Request $request,Film $filmModel){
+    public function showUpdate(Request $request,Film $filmModel, ParseController $parse){
         $this->authorize('admin');
         if (isset($request->id)){
             $films=$filmModel->getUpdatedFilm($request->id);
-             $Blu_ray=ParseController::parse_blu_ray($request->id);// получаем спарсенную дату
+
+            foreach ($films as $film){
+               $DVD_source=$film->DVD_source;
+            }
+             $Blu_ray=$parse->parse_blu_ray($DVD_source);// получаем спарсенную дату
             if ($Blu_ray==0){
                 $Blu_ray='Дата не анонсирована';
             }
             $mass_date=['Blu_ray'=>$Blu_ray];
-            return view('updateForm',['films'=>$films]);
+            return view('updateForm',['films'=>$films, 'mass_date'=>$mass_date]);
         }else{
             $films=$filmModel->getFilm();// создать получение всех записей
             return view('show',['films'=>$films]);
@@ -122,7 +126,7 @@ class FilmController extends Controller
             $prev_month=$month-1;
             $prev_year=$mass[1];
             if ($prev_month==0){
-               echo $prev_month=12;
+                $prev_month=12;
                 $prev_year=$mass[1]-1; //предыдущий год
             }
             $prev_month=$this->IntToString($prev_month);

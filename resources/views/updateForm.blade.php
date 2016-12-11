@@ -5,10 +5,10 @@
         <form class="form-horizontal" method="POST" action='/store/{{$film->id}}'>
 
             <label class="control-label">imdb</label>
-            <div  id="parse" class="btn btn-info">Спарсить</div>
+            <div  id="parse" class="btn btn-warning">Спарсить</div>
+            <a target="_blank"  href="http://www.imdb.com/title/{{$film->imdb}}"><div class="btn btn-info">Перейти на сайт</div></a>
             <div class="row alert alert-info">
-                <label>Дата релиза:</label><br/>
-                <label>Дата Blu_ray:</label><br/>
+                <label>Дата Blu_ray: </label>{{$mass_date['Blu_ray']}}<br/>
             </div>
             <input type="text" class="form-control"  name="imdb" value="{{$film->imdb}}">
 
