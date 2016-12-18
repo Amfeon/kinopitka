@@ -34,7 +34,7 @@ Route::post('/rating','RatingController@showRating');
 Route::post('/ratingAdd','RatingController@calcRating'); //нужен будет посредник на отправку аякс
 Route::get('/parse','ParseController@parse');// поменять на парсер
 Route::get('/parse_blu_ray','ParseController@update_Blu_ray');
-
+Route::get('/release-changes','NewsController@changes_show');
 Route::get('/profile','UserController@profile');
 Route::post('/profile','UserController@update_avatar');
 
