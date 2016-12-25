@@ -8,6 +8,7 @@
 @section('menu')
     <li ><a href="{{ url('/') }}">Даты выхода</a></li>
     <li class="{{'active'}}"><a href="{{ url('/blu-ray') }}">Blu-Ray релизы</a></li>
+    <li><a href="{{ url('/release-changes') }}">Новости релизов</a></li>
 @endsection
 @section('content')
     <article class="container">
