@@ -212,11 +212,11 @@ class ParseController extends Controller
     }
     //обновление DVD релизов
     public function update_Blu_ray(){
-        $updated_films =Film::select('id' ,'Blu_ray','DVD_source')-> whereBetween('Blu_ray',[Carbon::now()->subWeekday(),Carbon::now()->addMonth()])
+        $updated_films =Film::select('id' ,'Blu_ray','DVD_source')-> whereBetween('Blu_ray',[Carbon::now()->subWeekday(20),Carbon::now()->addMonth()])
             ->get();
        foreach ($updated_films as $film){
            //доделать функцию обновления даты
-          $new_date=$this->parse_blu_ray($film->DVD_source);
+           $new_date=$this->parse_blu_ray($film->DVD_source);
            if($new_date!=0){
                $new_date=trim($new_date);
                 if($new_date!=$film->Blu_ray){
@@ -224,6 +224,10 @@ class ParseController extends Controller
                     $film_model=Film::find($film->id);
                     $film_model->Blu_ray=$new_date;
                     $film_model->save();
+                    FilmChange::insert([
+                        'film_id'=>$film->id,
+                        'Blu_ray'=>1
+                    ]);
                     echo "Дата изменена";
                 }else{
                     echo "Даты совпали";
@@ -231,6 +235,7 @@ class ParseController extends Controller
                 }
            }
        }
+        //return redirect('/admin');
     }
 }
 

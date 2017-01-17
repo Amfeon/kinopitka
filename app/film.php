@@ -83,7 +83,7 @@ public function createFilm($date){
     }
     public function updateFilm($date,$id){
      //   $id=$date['id'];
-        $title=$date['title'];
+      /*  $title=$date['title'];
         $original=$date['original'];
         $release=$date['release'];
         $Blu_ray=$date['Blu_ray'];
@@ -116,7 +116,7 @@ public function createFilm($date){
                 'director' => $director,
                 'actors' => $actors,
                 'trailer' => $trailer
-            ]);
+            ]);*/
 
        //return DB::update('UPDATE `films` SET `title`=?,`image`=?,`original`=?,`plot`=?,`imdb`=?,`Blu_ray`=?,`release`=?,`description`=?,`updated_at`=?, `DVD_source`=?, `kinopoisk`=?, `director`=?, `actors`=?, `trailer`=? WHERE id=?', [$title, $image, $original, $plot, $imdb, $Blu_ray, $release, $description,Carbon::now(),$DVD_source,$kinopoisk,$director,$actors,$trailer,$id]);
     }

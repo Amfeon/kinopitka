@@ -1,6 +1,6 @@
 @extends('layouts.basic')
 @section('head')
-    @foreach($film as $film)
+    {{--@foreach($film as $film)--}}
     <meta name="description" content="{{$film->description}}">
     <title>
         {{$film->title}} / {{$film->original}} дата выхода и Blu-ray релиза
@@ -80,7 +80,7 @@
     </div>
 </div>
 
-    @endforeach
+    {{--@endforeach --}}
 
 @endsection
 @section('scripts')

@@ -15,7 +15,7 @@ class CreateFilmChangesTable extends Migration
         Schema::create('film_changes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('film_id');
-            $table->boolean('Blu_ray');
+            $table->boolean('Blu_ray')->default(0);
             $table->timestamps();
         });
     }

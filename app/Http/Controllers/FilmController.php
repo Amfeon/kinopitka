@@ -10,6 +10,7 @@ use DB;
 use App\Http\Controllers\ParseController;
 use Carbon\Carbon;
 use Illuminate\Pagination\Paginator;
+use App\FilmChange;
 
 
 class FilmController extends Controller
@@ -35,7 +36,9 @@ class FilmController extends Controller
     }
     public function index(film $FilmModel,$id)
     {
-        $film = $FilmModel->getPublishedFilm($id);
+        //$film = $FilmModel->getPublishedFilm($id);
+        $film=Film::where('id',$id)->first();
+
         return view('film',['film' => $film]);
     }
     public  function create(){
@@ -49,7 +52,34 @@ class FilmController extends Controller
             'title'=>'required'
         ]);
             if ($request->id!=null) {
-                $kino->updateFilm($request->all(), $request->id);
+                //$kino->updateFilm($request->all(), $request->id);
+                $kino = Film::find($request->id);
+                $kino->title=$request->title;
+                $kino->original=$request->original;
+                $kino->image=$request->image;
+                $kino->plot=$request->text;
+                $kino->imdb=$request->imdb;
+                $kino->Blu_ray=$request->Blu_ray;
+                $kino->release=$request->release;
+                $kino->description=$request->description;
+                $kino->DVD_source=$request->DVD_sourse;
+                $kino->kinopoisk=$request->kinopoisk;
+                $kino->director=$request->director;
+                $kino->actors=$request->actors;
+                $kino->trailer=$request->trailer;
+                $kino->save();
+                if($request->Blu_ray!=$request->Old_Blu_ray){//если даты не равны
+                    FilmChange::insert([
+                        'film_id'=>$request->id,
+                        'Blu_ray'=>1
+                    ]);
+                }
+                if($request->release!=$request->Old_release){//если даты не равны
+                    FilmChange::insert([
+                        'film_id'=>$request->id,
+                        'Blu_ray'=>0
+                    ]);
+                }
                 return redirect('/admin');
             } else {
                 preg_match('~[0-9]{4,}~',$request->kinopoisk,$a);
@@ -73,8 +103,11 @@ class FilmController extends Controller
                         'actors' => $request->actors,
                         'trailer' => $request->trailer
                     ]);
-              // $id=$kino->createFilm($request->all());
                $rating->addFilm($id);
+               FilmChange::insert([
+                   'film_id'=>$id,
+                   'Blu_ray'=>0
+               ]);
                 return redirect('/admin');
             }
 
@@ -83,7 +116,6 @@ class FilmController extends Controller
         $this->authorize('admin');
         if (isset($request->id)){
             $films=$filmModel->getUpdatedFilm($request->id);
-
             foreach ($films as $film){
                $DVD_source=$film->DVD_source;
             }

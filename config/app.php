@@ -157,6 +157,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Yangqi\Htmldom\HtmldomServiceProvider::class,
+        //develop
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -204,6 +206,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Htmldom' => Yangqi\Htmldom\Htmldom::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        //develop
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

@@ -35,9 +35,10 @@
 
             <label class="control-label">Дата выхода</label>
             <input type="text" class="form-control"  name="release" value="{{$film->release}}">
-
+            <input type="hidden" name="Old_release" value="{{$film->release}}">
             <label class="control-label">Блю-рей релиз</label>
             <input type="text" class="form-control"  name="Blu_ray" value="{{$film->Blu_ray}}">
+            <input type="hidden" name="Old_Blu_ray" value="{{$film->Blu_ray}}">
             <label class="control-label">Картинка</label>
             <input type="text" class="form-control"  name="image" value="{{$film->image}}">
             <label class="control-label">Трейлер</label>

@@ -10,8 +10,8 @@ use App\Http\Requests;
 class NewsController extends Controller
 {
     public function changes_show(){
-        //$changes=FilmChange::
-        return view('film_changes');
+        $changes=FilmChange::all();
+        return view('film_changes',['changes'=>$changes]);
     }
 
 }
