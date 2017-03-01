@@ -24,7 +24,10 @@ class film extends Model
     public function validate($data){
         return Validator::make($data, static::$rules);
     }
-
+    /*Новости*****************************/
+    public function news(){
+        return $this->hasMany('App\FilmChange');
+    }
     public function mainPageGet(){
         $a=DB::select('select * FROM films');
         return $a;

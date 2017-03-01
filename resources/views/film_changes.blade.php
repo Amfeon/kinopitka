@@ -18,6 +18,7 @@
         <div class="row">
                 <h2 class="text-center  alert-success" style="border:1px solid #2b542c"> 21 Декабря 2016 </h2>
             <ul>
+
                     <li  class="row" style="padding: 0;list-style-type:none;">
                        <div class="col-sm-6">
                           <div class="row"> Дом странных детей Мисс Перегрин / Miss Peregrine's Home for Peculiar Children</div>
@@ -40,6 +41,7 @@
                         </div>
                     </div>
                 </li>
+
             </ul>
 
         </div>
