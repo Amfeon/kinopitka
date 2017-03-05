@@ -13,7 +13,7 @@
 <body>
 <nav class="header">
     <div class="logo">
-        <img src="http://releasesoon.ru/css/images/logo_1.jpg"/>
+        <img src="/image/logo_1.png"/>
     </div>
     <div class="menu">
         <a href="{{ url('/') }}">
@@ -44,11 +44,10 @@
 @yield('content')
 
 <footer class="footer">
-    всякое там
+    <p>
+    Копирайты и все такое =)
+    </p>
 </footer>
 @yield('scripts')
-
-
-
 </body>
 </html>

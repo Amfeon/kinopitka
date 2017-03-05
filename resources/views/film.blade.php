@@ -55,16 +55,12 @@
             <p>и по случайному стечению обстоятельств планета была густо населена, тут то и начинается замес...</p>
             {!!$film->plot!!}
         </div>
-        @if($film->trailer!='')
-            <div class="trailer">
-                <h3 class="info" >Trailer 1</h3>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$film->trailer}}" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="trailer">
-                <h3>Trailer one </h3>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/05sEp3CBaAM" frameborder="0" allowfullscreen></iframe>
-            </div>
-        @endif
+            @foreach($trailers as $trailer)
+                <div class="trailer">
+                    <h3>{{$trailer->title}}</h3>
+                    {!! $trailer->trailer!!}
+                </div>
+            @endforeach
     </article>
 </div>
 

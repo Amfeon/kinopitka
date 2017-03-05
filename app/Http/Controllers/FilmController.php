@@ -38,8 +38,8 @@ class FilmController extends Controller
     {
         //$film = $FilmModel->getPublishedFilm($id);
         $film=Film::where('id',$id)->first();
-
-        return view('film',['film' => $film]);
+        $trailer=Film::find($id)->trailers;
+        return view('film',['film' => $film,'trailers'=>$trailer]);
     }
     public  function create(){
         $this->authorize('admin');

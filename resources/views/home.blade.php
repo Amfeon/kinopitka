@@ -8,7 +8,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <h1> Даты выхода фильмов на DVD  и Blu-ray носителях </h1>
+        <h1> Даты выхода фильмов в кинотеатрах России </h1>
         <p>
             some text some text some textsome text some text some textsome text some text some textsome text some text some textsome text some text some textsome text some text some text
         </p>

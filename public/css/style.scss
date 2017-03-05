@@ -1,6 +1,6 @@
 @import "grid";
 $color: #aaa;
-
+$color-date:#2271ed;
 $gradient: "linear-gradient(#FFF, #eee);";
 $gradient-info: linear-gradient(to bottom, #d9edf7 0, #b9def0 100%);
 $gradient-success: linear-gradient(to bottom, #dff0d8 0, #c8e5bc 100%);
@@ -23,6 +23,8 @@ $color-warning:#8a6d3b;
 }
 .footer{
  margin-top: auto;
+  justify-content: center;
+  color:$color;
 }
 
 .container{
@@ -87,6 +89,7 @@ body{
   width: calc(100% - 30px);
   margin: 15px;
   border-radius: 5px;
+  cursor: pointer;
   &:hover{
     background: linear-gradient(#3F94EA, #2589ED);
   }
@@ -160,6 +163,10 @@ color: white;
     .button{
       color: white;
     background: linear-gradient(#3ddee9, #28ceed);
+      &:hover{
+        cursor: pointer;
+        background: linear-gradient(#31afba, #28a9c8);
+      }
     }
   }
 }
@@ -246,4 +253,31 @@ color: white;
 }
 .row.article{
   justify-content: flex-start;
+}
+.blu_ray_nav{
+  display: flex;
+  justify-content: space-between;
+  margin:15px;
+  height: 50px;
+  .left, .right{
+    color:white;
+    background: #2271ed;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    @include col(5);
+    &:hover{
+      background: #225CB9;
+    }
+  }
+}
+.news_title{
+  @include col(8);
+  @include col-xs(12);
+}
+.news_date{
+  color: $color-date;
+  font-size: 18px;
+  @include col(4);
+  @include col-xs(12);
 }

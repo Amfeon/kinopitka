@@ -12,39 +12,29 @@
     <li class="{{'active'}}"><a href="{{ url('/release-changes') }}">Новости релизов</a></li>
 @endsection
 @section('content')
-    <article class="container" style="background: #fff; border-radius: 10px;">
-        <h1 class="alert alert-info">Изменения в датах выхода фильмов и Blu-ray релизов. </h1>
-        <div class="row">Публикуются даты  ОФИЦИАЛЬНЫХ Blu-ray релизов, никаких пираток и прочей ереси. Данные с оффициальных сайтов.</div>
+    <main class="container">
         <div class="row">
-                <h2 class="text-center  alert-success" style="border:1px solid #2b542c"> 21 Декабря 2016 </h2>
-            <ul>
-
-                    <li  class="row" style="padding: 0;list-style-type:none;">
-                       <div class="col-sm-6">
-                          <div class="row"> Дом странных детей Мисс Перегрин / Miss Peregrine's Home for Peculiar Children</div>
-                       </div>
-                        <div class="col-sm-6">
-                            <div class="row">
-                                <div class="col-sm-8">РЕлиз намечен на:</div>
-                                <div class="col-sm-4"> 12-12-2016</div>
-                            </div>
-                        </div>
-                    </li>
-                <li class="row" style="padding: 0;  list-style-type:none">
-                    <div class="col-sm-6">
-                        <div class="row"> Дом странных детей Мисс Перегрин </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="row">
-                            <div class="col-sm-8">Blu-ray намечен на:</div>
-                            <div class="col-sm-4"> 12-12-2016</div>
-                        </div>
-                    </div>
-                </li>
-
-            </ul>
-
+            <h1>Изменения в датах выхода фильмов и Blu-ray релизов. </h1>
+            <p>
+                Публикуются даты  ОФИЦИАЛЬНЫХ Blu-ray релизов, никаких пираток и прочей ереси. Данные с оффициальных сайтов.
+            </p>
         </div>
-    </article>
+        <div class="row">
+           <div class="news_title">
+               Доктор Стрэндж  / Doctor Strange
+           </div>
+            <div class="news_date">
+                фильм выходит 04-11-2016
+            </div>
+        </div>
+        <div class="row">
+            <div class="news_title">
+                Доктор Стрэндж  / Doctor Strange
+            </div>
+            <div class="news_date">
+                blu-ray выходит 04-11-2016
+            </div>
+        </div>
+    </main>
 
 @endsection
