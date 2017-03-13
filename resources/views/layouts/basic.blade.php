@@ -13,7 +13,7 @@
 <body>
 <nav class="header">
     <div class="logo">
-        <img src="/image/logo_1.png"/>
+        <img src="/image/logo_1.png" alt="Кинопытка - твой дневничок выхода фильмов"/>
     </div>
     <div class="menu">
         <a href="{{ url('/') }}">
@@ -34,7 +34,7 @@
 
     </div>
     <div class="search">
-        <form action="" method="get">
+        <form action="http://yandex.ru/sitesearch" method="get">
             <input name="search" placeholder="Найти фильм" type="search" required>
             <input class ="button" type="submit" value="Жмахай">
         </form>

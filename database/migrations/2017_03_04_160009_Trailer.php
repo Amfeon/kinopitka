@@ -15,7 +15,7 @@ class Trailer extends Migration
         Schema::create('trailers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('film_id')->default(0);
-            $table->char(' title',50);
+            $table->varchar('title',50);
             $table->text('trailer');
         });
     }

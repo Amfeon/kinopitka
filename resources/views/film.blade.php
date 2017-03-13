@@ -14,7 +14,7 @@
 @endsection
 @section('content')
 
-<div class="container">
+<main class="container">
     <h1 class="success">{{$film->title}} / {{$film->original}}</h1>
     <div class="row ">
         <div class="image_block">
@@ -55,6 +55,7 @@
             <p>и по случайному стечению обстоятельств планета была густо населена, тут то и начинается замес...</p>
             {!!$film->plot!!}
         </div>
+
             @foreach($trailers as $trailer)
                 <div class="trailer">
                     <h3>{{$trailer->title}}</h3>
@@ -62,7 +63,7 @@
                 </div>
             @endforeach
     </article>
-</div>
+</main>
 
     {{--@endforeach --}}
 

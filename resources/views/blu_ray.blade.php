@@ -11,7 +11,7 @@
     <li><a href="{{ url('/release-changes') }}">Новости релизов</a></li>
 @endsection
 @section('content')
-    <div class="container">
+    <main class="container">
         <div class="row">
             <h1 class=" alert alert-info"> Blu-ray релизы запланированные на   {{$data['now']}}</h1>
             <p>
@@ -19,7 +19,7 @@
             </p>
         </div>
 
-        <main class="row">
+        <article class="row">
             <ul id='scroll' >
                 @foreach($films as $film)
                     <li>
@@ -35,7 +35,7 @@
                     </li>
                 @endforeach
             </ul>
-        </main>
+        </article>
         <div class="blu_ray_nav">
             <a class="left" href="/blu-ray/{{$data['prev']}}">
                 <div >
@@ -47,5 +47,5 @@
                 {{$data['next']}}
             </div></a>
         </div>
-    </div>
+    </main>
 @endsection

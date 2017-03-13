@@ -6,7 +6,7 @@
     </title>
 @endsection
 @section('content')
-<div class="container">
+<main class="container">
     <div class="row">
         <h1> Даты выхода фильмов в кинотеатрах России </h1>
         <p>
@@ -35,7 +35,7 @@
         Показать еще
         </p>
     </div>
-</div>
+</main>
 @endsection
 @section('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
