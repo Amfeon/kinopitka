@@ -30,7 +30,7 @@ class FilmController extends Controller
     }
     public function mainPage(film $filmModel){
 
-       $films=DB::table('films')->where('Blu_ray','<=',Carbon::now())->take(12)->get();
+       $films=DB::table('films')->where('release','>=',Carbon::now()->subWeek(3))->take(12)->get();
         //$films=$filmModel->mainPageGet());
         return view('home',['films'=>$films]);
     }

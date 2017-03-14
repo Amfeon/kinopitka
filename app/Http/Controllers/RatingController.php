@@ -9,9 +9,9 @@ use App\Http\Requests;
 class RatingController extends Controller
 {
     public function addFilm ($film_id){
-        /*   DB::table('ratings')->insert([
+           DB::table('ratings')->insert([
                'film_id'=>$film_id
-           ]);*/
+           ]);
     }
     public function calcRating (Request $request, Rating $rating){
           //добываем текущие оценки

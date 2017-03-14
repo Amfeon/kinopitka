@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0ff51a94-975f-408d-8894-e32174f46eba" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_03_04_160009_Trailer.php" afterPath="$PROJECT_DIR$/database/migrations/2017_03_04_160009_Trailer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/blu_ray.blade.php" afterPath="$PROJECT_DIR$/resources/views/blu_ray.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/film.blade.php" afterPath="$PROJECT_DIR$/resources/views/film.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FilmController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FilmController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RatingController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RatingController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/basic.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/basic.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pagination.blade.php" afterPath="$PROJECT_DIR$/resources/views/pagination.blade.php" />
     </list>
     <ignored path="laravel-test.ru.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,110 +34,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Trailer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Trailer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2017_03_04_160009_Trailer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2017_03_04_160009_Trailer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Rating.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Rating.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-              <folding>
-                <marker date="1478257891088" expanded="true" signature="172:216" ph="INSERT INTO `Ratings`... " />
-                <marker date="1478257891088" expanded="true" signature="698:756" ph="UPDATE `rati... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FilmController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FilmController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
+            <state relative-caret-position="510">
+              <caret line="105" column="37" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
-                <marker date="1488812161255" expanded="true" signature="454:484" ph="select * fro... films" />
-                <marker date="1488812161255" expanded="true" signature="6306:6368" ph="select * fro... films" />
-                <marker date="1488812161255" expanded="true" signature="7080:7142" ph="select * fro... films" />
+                <marker date="1489498347260" expanded="true" signature="454:484" ph="select * fro... films" />
+                <marker date="1489498347260" expanded="true" signature="6318:6380" ph="select * fro... films" />
+                <marker date="1489498347260" expanded="true" signature="7092:7154" ph="select * fro... films" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <file leaf-file-name="RatingController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RatingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+            <state relative-caret-position="177">
+              <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="film.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/film.blade.php">
+      <file leaf-file-name="ParseController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ParseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-              <folding>
-                <marker date="1489309796584" expanded="true" signature="3900:4004" ph="..." />
-                <marker date="1489309796584" expanded="true" signature="4175:5211" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="blu_ray.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/blu_ray.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+            <state relative-caret-position="466">
+              <caret line="107" column="32" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="basic.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/basic.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="film.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/film.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="125" column="29" selection-start-line="125" selection-start-column="29" selection-end-line="125" selection-end-column="29" />
-              <folding>
-                <element signature="e#22#52#0#PHP" expanded="true" />
-                <marker date="1488646734376" expanded="true" signature="788:807" ph="select * FRO... films" />
-                <marker date="1488646734376" expanded="true" signature="894:926" ph="select * fro... films" />
-                <marker date="1488646734376" expanded="true" signature="2588:2614" ph="select id,ti... films" />
-                <marker date="1488646734376" expanded="true" signature="2708:2738" ph="select * fro... films" />
-                <marker date="1488646734376" expanded="true" signature="4664:4692" ph="delete from " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -173,7 +97,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Rating.php" />
         <option value="$PROJECT_DIR$/app/Ratings.php" />
         <option value="$PROJECT_DIR$/app/Rating.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/RatingController.php" />
         <option value="$PROJECT_DIR$/resources/views/rating/rating.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/pagination.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/news.blade.php" />
@@ -204,13 +127,14 @@
         <option value="$PROJECT_DIR$/public/css/style.scss" />
         <option value="$PROJECT_DIR$/app/Trailer.php" />
         <option value="$PROJECT_DIR$/app/film.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FilmController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_03_04_160009_Trailer.php" />
         <option value="$PROJECT_DIR$/resources/views/pagination.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/film.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/blu_ray.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/basic.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FilmController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/RatingController.php" />
       </list>
     </option>
   </component>
@@ -255,6 +179,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -374,11 +299,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -395,10 +316,35 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel-test.ru" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel-test.ru" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -572,17 +518,18 @@
       <workItem from="1488632201509" duration="10182000" />
       <workItem from="1488808215863" duration="2914000" />
       <workItem from="1489309027476" duration="2169000" />
+      <workItem from="1489498158195" duration="1278000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="490085000" />
+    <option name="totallyTimeSpent" value="491363000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35523504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35897437" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39243242" sideWeight="0.43963677" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -766,13 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RatingController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="21" column="57" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/updateForm.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -805,13 +745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
           <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ParseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3791">
-          <caret line="228" column="36" selection-start-line="228" selection-start-column="36" selection-end-line="228" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -903,7 +836,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/film.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
+        <state relative-caret-position="2057">
           <caret line="125" column="29" selection-start-line="125" selection-start-column="29" selection-end-line="125" selection-end-column="29" />
           <folding>
             <element signature="e#22#52#0#PHP" expanded="true" />
@@ -920,34 +853,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FilmController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="40" column="42" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-            <marker date="1488812161255" expanded="true" signature="454:484" ph="select * fro... films" />
-            <marker date="1488812161255" expanded="true" signature="6306:6368" ph="select * fro... films" />
-            <marker date="1488812161255" expanded="true" signature="7080:7142" ph="select * fro... films" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/film.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
+        <state relative-caret-position="544">
           <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
           <folding>
             <marker date="1489309796584" expanded="true" signature="3900:4004" ph="..." />
@@ -958,7 +869,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/blu_ray.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
+        <state relative-caret-position="510">
           <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
           <folding />
         </state>
@@ -996,6 +907,43 @@
             <marker date="1478257891088" expanded="true" signature="172:216" ph="INSERT INTO `Ratings`... " />
             <marker date="1478257891088" expanded="true" signature="698:756" ph="UPDATE `rati... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="90" selection-start-line="24" selection-start-column="90" selection-end-line="24" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FilmController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="105" column="37" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+            <marker date="1489498347260" expanded="true" signature="454:484" ph="select * fro... films" />
+            <marker date="1489498347260" expanded="true" signature="6318:6380" ph="select * fro... films" />
+            <marker date="1489498347260" expanded="true" signature="7092:7154" ph="select * fro... films" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RatingController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ParseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="107" column="32" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
