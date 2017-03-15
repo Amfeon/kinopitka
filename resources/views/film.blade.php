@@ -42,17 +42,12 @@
                 <div class='ya-share2' data-services='vkontakte,facebook,odnoklassniki,moimir,twitter,viber,whatsapp'></div>
             </div>
             <div class="stroka"><strong >Режиссер: </strong>             <p class="date"> {{$film->director}}</p></div>
-            <div class="stroka"><strong >Актеры: </strong>             <p class="date">{{$film->actors}}</p></div>
+            <div class="stroka"><strong >Актеры: </strong>  <br/>           <p class="date">{{$film->actors}}</p></div>
         </div>
     </div>
     <article class="row article">
         <div class="text">
             <h3 class="warning" >Сюжет:</h3>
-            <p>&nbsp;Знатный клипмейкер Джастин Лин под влиянием финансовых потокок JJ Абрамса снова в деле.</p>
-
-            <p>В общем и целом, на главных героев в очередной раз напала какая то пакость, и судя по трейлерам, это был местный аналог космических зергов, короче похерили корабль и главным героям пришлось десантироваться на ближайшую планету,&nbsp;</p>
-
-            <p>и по случайному стечению обстоятельств планета была густо населена, тут то и начинается замес...</p>
             {!!$film->plot!!}
         </div>
 

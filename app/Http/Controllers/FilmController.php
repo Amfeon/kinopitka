@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\film;
 use App\Rating;
+use App\Trailer;
 use DB;
 use App\Http\Controllers\ParseController;
 use Carbon\Carbon;
@@ -66,8 +67,14 @@ class FilmController extends Controller
                 $kino->kinopoisk=$request->kinopoisk;
                 $kino->director=$request->director;
                 $kino->actors=$request->actors;
-                $kino->trailer=$request->trailer;
+                $trailer=$request->trailer;
                 $kino->save();
+                if($request->trailer!=''){
+                    Trailer::insert([
+                        'film_id'=>$request->id,
+                        'trailer'=>$request->trailer
+                    ]);
+                }
                 if($request->Blu_ray!=$request->Old_Blu_ray){//если даты не равны
                     FilmChange::insert([
                         'film_id'=>$request->id,
@@ -101,8 +108,13 @@ class FilmController extends Controller
                         'kinopoisk' => $kinopoisk,
                         'director' => $request->director,
                         'actors' => $request->actors,
-                        'trailer' => $request->trailer
                     ]);
+                if($request->trailer!=''){
+                    Trailer::insert([
+                        'film_id'=>$id,
+                        'trailer'=>$request->trailer
+                    ]);
+                }
                $rating->addFilm($id);
                FilmChange::insert([
                    'film_id'=>$id,
