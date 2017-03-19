@@ -65,49 +65,51 @@
 @endsection
 @section('scripts')
     <!-- JavaScripts -->
-    <script src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
     <script type="text/javascript">
         $.ajaxSetup({
             headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
         });
     </script>
 
-    <script>
-        $.ajax({
-            type: 'post',
-            url: '/rating',
-            data: {id:{{$film->id}}},
-            success: function (html) {
-                $("#rating").html(html);
-                $("#negativ").data({'negativ': 1, 'positiv': 0});
-                $("#positiv").data({'positiv': 1, 'negativ': 0});
-                if($.cookie("cc"+{{$film->id}})!={{$film->id}}){
-                    $('#rating').on('click', '.botton', function () {
-                        var positiv = $(this).data("positiv");
-                        var negativ = $(this).data("negativ");
-                        // $( "body" ).data( "bar", "foobar" );
-                        // alert(negativ);
-                        // console.log(positiv);
-                        $.ajax({
-                            type:'POST',
-                            url:'/ratingAdd',
-                            data: {id: {{$film->id}}, positiv: positiv, negativ: negativ},
-                            success: function(html){
-                                $("#rating").html(html);
-                                $("#negativ").data({'negativ': 1, 'positiv': 0});
-                                $("#positiv").data({'positiv': 1, 'negativ': 0});
-                                $.cookie("cc"+{{$film->id}}, {{$film->id}}, { expires: 350});
-                                $(".botton,.qwestion").hide()
-                            }
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                type: 'post',
+                url: '/rating',
+                data: {id:{{$film->id}}},
+                success: function (html) {
+                    $("#rating").html(html);
+                    $("#negativ").data({'negativ': 1, 'positiv': 0});
+                    $("#positiv").data({'positiv': 1, 'negativ': 0});
+                    if($.cookie("cc"+{{$film->id}})!={{$film->id}}){
+                        $('#rating').on('click', '.botton', function () {
+                            var positiv = $(this).data("positiv");
+                            var negativ = $(this).data("negativ");
+                            // $( "body" ).data( "bar", "foobar" );
+                            // alert(negativ);
+                            // console.log(positiv);
+                            $.ajax({
+                                type:'POST',
+                                url:'/ratingAdd',
+                                data: {id: {{$film->id}}, positiv: positiv, negativ: negativ},
+                                success: function(html){
+                                    $("#rating").html(html);
+                                    $("#negativ").data({'negativ': 1, 'positiv': 0});
+                                    $("#positiv").data({'positiv': 1, 'negativ': 0});
+                                    $.cookie("cc"+{{$film->id}}, {{$film->id}}, { expires: 350});
+                                    $(".botton,.qwestion").hide()
+                                }
+                            });
                         });
-                    });
-                }else{
-                    $(".botton,.qwestion").hide()
+                    }else{
+                        $(".botton,.qwestion").hide()
+                    }
                 }
-            }
-        });
+            });
+        })
     </script>
-    <script>
+    <script type="text/javascript">
         (function(d,s,id){var js,stags=d.getElementsByTagName(s)[0];
             if(d.getElementById(id)){return;}js=d.createElement(s);js.id=id;
             js.src='http://g-ec2.images-amazon.com/images/G/01/imdb/plugins/rating/js/rating.min.js';

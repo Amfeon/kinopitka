@@ -19,7 +19,7 @@
             </p>
         </div>
 
-        <article class="row">
+        <div class="row">
             <ul id='scroll' >
                 @foreach($films as $film)
                     <li>
@@ -35,7 +35,7 @@
                     </li>
                 @endforeach
             </ul>
-        </article>
+        </div>
         <div class="blu_ray_nav">
             <a class="left" href="/blu-ray/{{$data['prev']}}">
                 <div >

@@ -13,6 +13,7 @@ $color-warning:#8a6d3b;
 .header, .footer{
   display: flex;
   flex-wrap: wrap;
+  min-height: 50px;
   background: $gradient-dark;
   li{
     display: inline-block;
@@ -215,6 +216,9 @@ color: white;
   margin: 15px;
   @include col(6);
   @include col-sm(12);
+  p{
+    padding: 10px;
+  }
 }
 .trailer{
   margin: 15px;
@@ -225,6 +229,7 @@ color: white;
   }
   h3{
    margin: 10px 0;
+    width: calc(100% - 30px);
   }
 }
 .icon{

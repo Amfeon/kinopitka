@@ -48,9 +48,12 @@
 
       </div>
 
-         <label class="control-label">Трейлер</label>
-         <input type="text" class="form-control"  name="trailer">
-            <label class="control-label">СЮжет фильма</label>
+         <label class="control-label">Трейлер Заголовок</label>
+         <input type="text" class="form-control"  name="trailer_title" >
+         <label class="control-label">Трейлер код</label>
+         <input type="text" class="form-control"  name="trailer" >
+
+            <label class="control-label">Сюжет фильма</label>
             <textarea class="form-control" id="text" name="text"> {{Request::old('text')}}</textarea>
           <input type="hidden" name="_token" value="{{csrf_token()}}">
          <input class="btn btn-primary" type="submit" value="Создать">

@@ -13,7 +13,7 @@
            Представляем вашему вниманию даты выхода самых ожидаемых фильмов.
         </p>
     </div>
-    <article class="row">
+    <div class="row">
         <ul id='scroll' >
             @foreach($films as $film)
                 <li>
@@ -22,14 +22,14 @@
                         {{$film->title}}
                     </div>
                     <a href='film/{{$film->id}}'>
-                        <img  width="150" height="250" src ='{{$film->image}}' alt='Подробнее о фильме {{$film->title}}' title='Подробенее о фильме {{$film->title}}'/>
+                        <img  width="150" height="250" src ='{{$film->image}}' alt='Подробнее о фильме {{$film->title}}' title='Подробнее о фильме {{$film->title}}'/>
                     </a>
                     <div class="stripe_down">Дата Выхода:<br/> {{$film->release}}</div>
                 </div>
                 </li>
             @endforeach
         </ul>
-    </article>
+    </div>
     <div id="more" class="more_scroll">
         <p>
         Показать еще
@@ -38,38 +38,38 @@
 </main>
 @endsection
 @section('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script type="text/javascript">
     $.ajaxSetup({
         headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
     });
 </script>
-<script>
-    var start=12;
-    $("#more").click(function () {
-        var btn = $(this)
-        btn.button('loading')
+<script type="text/javascript">
+    $(document).ready(function () {
+        var start=12;
+        $("#more").click(function () {
+            var btn = $(this)
+            btn.text('loading...')
+            $.ajax({
+                url: "/", // url запроса
+                cache: false,
+                data: { start: start }, // если нужно передать какие-то данные
+                type: "POST", // устанавливаем типа запроса POST
+                success: function(html) {
+                    if(html==0){
+                        $("#more").hide();
+                    }else {
+                        //console.log(html);
+                        start=start+12;
+                        alert(start);
+                        $('#scroll').append(html);
 
-        $.ajax({
-            url: "/", // url запроса
-            cache: false,
-            data: { start: start }, // если нужно передать какие-то данные
-            type: "POST", // устанавливаем типа запроса POST
-            success: function(html) {
-                if(html==0){
-                    $("#more").hide();
-                }else {
-                //console.log(html);
-                    start=start+12;
-                    alert(start);
-                    $('#scroll').append(html);
-
-                }
-            } //контент подгружается в div#content
-        }).always(function () {
-            btn.button('reset')
-        });
-        return false
-    })
+                    }
+                } //контент подгружается в div#content
+            }).always(function () {
+                btn.text('<p>Показать еще</p>')
+            });
+            return false
+        })
+    });
 </script>
 @endsection

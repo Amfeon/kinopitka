@@ -20,18 +20,17 @@ class FilmController extends Controller
     public function pagination(Request $request){
         if(isset($request->start)){
              $start=$request->start;
-            $films= DB::select('select * from films limit ?,12', [$start]);
+            $films= DB::select("select * from films ORDER BY 'release' limit ?,12", [$start]);
 
             return view('pagination',['films'=>$films]);
         }else{
            return "Что-то пошло не так";
-
         }
 
     }
     public function mainPage(film $filmModel){
 
-       $films=DB::table('films')->where('release','>=',Carbon::now()->subWeek(3))->take(12)->get();
+       $films=DB::table('films')->where('release','>=',Carbon::now()->subWeek(3))->take(12)->orderBy('release', 'asc')->get();
         //$films=$filmModel->mainPageGet());
         return view('home',['films'=>$films]);
     }
@@ -72,6 +71,7 @@ class FilmController extends Controller
                 if($request->trailer!=''){
                     Trailer::insert([
                         'film_id'=>$request->id,
+                        'title'=>$request->trailer_title,
                         'trailer'=>$request->trailer
                     ]);
                 }
@@ -79,12 +79,6 @@ class FilmController extends Controller
                     FilmChange::insert([
                         'film_id'=>$request->id,
                         'Blu_ray'=>1
-                    ]);
-                }
-                if($request->release!=$request->Old_release){//если даты не равны
-                    FilmChange::insert([
-                        'film_id'=>$request->id,
-                        'Blu_ray'=>0
                     ]);
                 }
                 return redirect('/admin');
@@ -109,17 +103,18 @@ class FilmController extends Controller
                         'director' => $request->director,
                         'actors' => $request->actors,
                     ]);
+                $rating->addFilm($id);
+                FilmChange::insert([
+                    'film_id'=>$id,
+                    'Blu_ray'=>0
+                ]);
                 if($request->trailer!=''){
                     Trailer::insert([
                         'film_id'=>$id,
+                        'title'=>$request->trailer_title,
                         'trailer'=>$request->trailer
                     ]);
                 }
-               $rating->addFilm($id);
-               FilmChange::insert([
-                   'film_id'=>$id,
-                   'Blu_ray'=>0
-               ]);
                 return redirect('/admin');
             }
 

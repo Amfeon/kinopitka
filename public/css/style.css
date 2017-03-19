@@ -2,6 +2,7 @@
 .footer {
   display: flex;
   flex-wrap: wrap;
+  min-height: 50px;
   background: linear-gradient(#3c3c3c, #222);
 }
 
@@ -236,6 +237,10 @@ body {
   width: calc(8.333333333333334%*6 - 30px);
 }
 
+.text p {
+  padding: 10px;
+}
+
 .trailer {
   margin: 15px;
   width: calc(8.333333333333334%*6 - 30px);
@@ -247,6 +252,7 @@ body {
 
 .trailer h3 {
   margin: 10px 0;
+  width: calc(100% - 30px);
 }
 
 .icon {
