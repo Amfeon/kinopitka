@@ -9,6 +9,7 @@ $gradient-dark:linear-gradient(#3c3c3c, #222);
 $color-info:#31708f;
 $color-success:#3c763d;
 $color-warning:#8a6d3b;
+$text_color: #0077d3;
 
 .header, .footer{
   display: flex;
@@ -28,6 +29,15 @@ $color-warning:#8a6d3b;
   color:$color;
 }
 
+h1,h2,h3,h4,h5{
+  margin:10px;
+  padding: 10px;
+  width: calc(100% - 40px);
+  background: $gradient-info;
+  border-radius:5px;
+  color: $color-info;
+  border: 1px solid $color-info;
+}
 .container{
   max-width:1170px;
   margin: 0 auto;
@@ -39,6 +49,12 @@ $color-warning:#8a6d3b;
     width:calc(8.33333333% -  #{$offset});
     text-align: center;
     background: $color;
+  }
+  h1{
+    font-size:36px;
+    padding: 15px;
+    width: calc(100% - 70px);
+    margin: 20px;
   }
 }
 .scroll, .row{
@@ -57,26 +73,18 @@ $color-warning:#8a6d3b;
   }
 }
 
-h1,h2,h3,h4,h5{
-  margin:10px;
-  padding: 10px;
-  width: calc(100% - 40px);
-  background: $gradient-info;
-  border-radius:5px;
-  color: $color-info;
-  border: 1px solid $color-info;
-}
 ul, body{
   padding: 0;
   margin: 0;
 }
 html,body{
   height: 100%;
-  background: #999;
-   font-family: "Lato";
+  font-family: "Lato";
+  font-size: 18px;
 }
 body{
   display: flex;
+  background: #300303;
   flex-direction: column;
 
 }
@@ -197,7 +205,7 @@ color: white;
   @include col-md(8);
   @include col-sm(12);
   @include col-xs(12);
-  .stroka{
+ .actors, .stroka{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -210,6 +218,9 @@ color: white;
       font-size: 21px;
       align-self: flex-end;
     }
+  }
+  .actors{
+    flex-wrap: inherit;
   }
 }
 .text{
@@ -285,4 +296,32 @@ color: white;
   font-size: 18px;
   @include col(4);
   @include col-xs(12);
+}
+.share{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  .title{
+    width:calc(100%- 22px);
+    background: $gradient-warning;
+    padding: 10px;
+    text-align: center;
+    color: #300303;
+    font-size: 18px;
+    border-radius:5px 5px 0px 0px;
+  }
+  .vote{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0px;
+    .rating_bottom{
+      background: #1E86E1;
+      color: white;
+      padding: 5px;
+      width: 50px;
+      border-radius: 5px;
+      text-align: center;
+    }
+  }
 }

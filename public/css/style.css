@@ -19,6 +19,20 @@
   color: #aaa;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 10px;
+  padding: 10px;
+  width: calc(100% - 40px);
+  background: linear-gradient(to bottom, #d9edf7 0, #b9def0 100%);
+  border-radius: 5px;
+  color: #31708f;
+  border: 1px solid #31708f;
+}
+
 .container {
   max-width: 1170px;
   margin: 0 auto;
@@ -32,6 +46,13 @@
   width: calc(8.33333333% -  30px);
   text-align: center;
   background: #aaa;
+}
+
+.container h1 {
+  font-size: 36px;
+  padding: 15px;
+  width: calc(100% - 70px);
+  margin: 20px;
 }
 
 .scroll,
@@ -55,20 +76,6 @@
   margin: 0 10px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  margin: 10px;
-  padding: 10px;
-  width: calc(100% - 40px);
-  background: linear-gradient(to bottom, #d9edf7 0, #b9def0 100%);
-  border-radius: 5px;
-  color: #31708f;
-  border: 1px solid #31708f;
-}
-
 ul,
 body {
   padding: 0;
@@ -78,12 +85,13 @@ body {
 html,
 body {
   height: 100%;
-  background: #999;
   font-family: "Lato";
+  font-size: 18px;
 }
 
 body {
   display: flex;
+  background: #300303;
   flex-direction: column;
 }
 
@@ -215,6 +223,7 @@ body {
   width: calc(8.333333333333334%*8 - 30px);
 }
 
+.date_block .actors,
 .date_block .stroka {
   display: flex;
   flex-wrap: wrap;
@@ -222,14 +231,20 @@ body {
   margin-bottom: 20px;
 }
 
+.date_block .actors strong,
 .date_block .stroka strong {
   font-size: 21px;
 }
 
+.date_block .actors .date,
 .date_block .stroka .date {
   color: #0077d3;
   font-size: 21px;
   align-self: flex-end;
+}
+
+.date_block .actors {
+  flex-wrap: inherit;
 }
 
 .text {
@@ -315,6 +330,38 @@ body {
   color: #2271ed;
   font-size: 18px;
   width: calc(8.333333333333334%*4 - 30px);
+}
+
+.share {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.share .title {
+  width: calc(100%- 22px);
+  background: linear-gradient(to bottom, #fcf8e3 0px, #f8efc0 100%);
+  padding: 10px;
+  text-align: center;
+  color: #300303;
+  font-size: 18px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.share .vote {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0px;
+}
+
+.share .vote .rating_bottom {
+  background: #1E86E1;
+  color: white;
+  padding: 5px;
+  width: 50px;
+  border-radius: 5px;
+  text-align: center;
 }
 
 @media screen and (max-width: 1100px) {

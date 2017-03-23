@@ -66,7 +66,7 @@
                     }
                 } //контент подгружается в div#content
             }).always(function () {
-                btn.text('<p>Показать еще</p>')
+                btn.text('Показать еще')
             });
             return false
         })

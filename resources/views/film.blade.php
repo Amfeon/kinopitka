@@ -36,18 +36,18 @@
         <div class="date_block">
             <div class="stroka"><strong >Дата выхода в России: </strong>                             <p class="date"> {{@date('d-m-Y', strtotime($film->release))}} года</p></div>
             <div class="stroka"><strong >Blu-Ray релиз предположительно: </strong>             <p class="date"> {{@date('d-m-Y', strtotime($film->Blu_ray))}} года</p></div>
-            <div class="stroka">
+            <div class="share" id="rating">
                 <script type='text/javascript' src='//yastatic.net/es5-shims/0.0.2/es5-shims.min.js' charset='utf-8'></script>
                 <script type='text/javascript' src='//yastatic.net/share2/share.js' charset='utf-8'></script>
                 <div class='ya-share2' data-services='vkontakte,facebook,odnoklassniki,moimir,twitter,viber,whatsapp'></div>
             </div>
             <div class="stroka"><strong >Режиссер: </strong>             <p class="date"> {{$film->director}}</p></div>
-            <div class="stroka"><strong >Актеры: </strong>  <br/>           <p class="date">{{$film->actors}}</p></div>
+            <div class="actors"><strong >Актеры: </strong>               <p class="date">{{$film->actors}}</p></div>
         </div>
     </div>
     <article class="row article">
         <div class="text">
-            <h3 class="warning" >Сюжет:</h3>
+            <h3 class="info" >Сюжет:</h3>
             {!!$film->plot!!}
         </div>
 

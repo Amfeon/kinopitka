@@ -20,8 +20,8 @@ class FilmController extends Controller
     public function pagination(Request $request){
         if(isset($request->start)){
              $start=$request->start;
-            $films= DB::select("select * from films ORDER BY 'release' limit ?,12", [$start]);
-
+           // $films= DB::select("select * from films ORDER BY 'release' limit ?,12", [$start]);
+            $films=DB::table('films')->where('release','>=',Carbon::now()->subWeek(3))->skip($start)->take(12)->orderBy('release', 'asc')->get();
             return view('pagination',['films'=>$films]);
         }else{
            return "Что-то пошло не так";
@@ -103,7 +103,9 @@ class FilmController extends Controller
                         'director' => $request->director,
                         'actors' => $request->actors,
                     ]);
-                $rating->addFilm($id);
+                Rating::insert([
+                    'film_id'=>$id
+                ]);
                 FilmChange::insert([
                     'film_id'=>$id,
                     'Blu_ray'=>0
