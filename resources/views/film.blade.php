@@ -13,7 +13,6 @@
     <li><a href="{{ url('/release-changes') }}">Новости релизов</a>
 @endsection
 @section('content')
-
 <main class="container">
     <h1 class="success">{{$film->title}} / {{$film->original}}</h1>
     <div class="row ">
@@ -37,9 +36,7 @@
             <div class="stroka"><strong >Дата выхода в России: </strong>                             <p class="date"> {{@date('d-m-Y', strtotime($film->release))}} года</p></div>
             <div class="stroka"><strong >Blu-Ray релиз предположительно: </strong>             <p class="date"> {{@date('d-m-Y', strtotime($film->Blu_ray))}} года</p></div>
             <div class="share" id="rating">
-                <script type='text/javascript' src='//yastatic.net/es5-shims/0.0.2/es5-shims.min.js' charset='utf-8'></script>
-                <script type='text/javascript' src='//yastatic.net/share2/share.js' charset='utf-8'></script>
-                <div class='ya-share2' data-services='vkontakte,facebook,odnoklassniki,moimir,twitter,viber,whatsapp'></div>
+
             </div>
             <div class="stroka"><strong >Режиссер: </strong>             <p class="date"> {{$film->director}}</p></div>
             <div class="actors"><strong >Актеры: </strong>               <p class="date">{{$film->actors}}</p></div>
@@ -83,7 +80,7 @@
                     $("#negativ").data({'negativ': 1, 'positiv': 0});
                     $("#positiv").data({'positiv': 1, 'negativ': 0});
                     if($.cookie("cc"+{{$film->id}})!={{$film->id}}){
-                        $('#rating').on('click', '.botton', function () {
+                        $('#rating').on('click', '.rating_bottom', function () {
                             var positiv = $(this).data("positiv");
                             var negativ = $(this).data("negativ");
                             // $( "body" ).data( "bar", "foobar" );
@@ -98,12 +95,12 @@
                                     $("#negativ").data({'negativ': 1, 'positiv': 0});
                                     $("#positiv").data({'positiv': 1, 'negativ': 0});
                                     $.cookie("cc"+{{$film->id}}, {{$film->id}}, { expires: 350});
-                                    $(".botton,.qwestion").hide()
+                                    $(".rating_bottom,.qwestion").hide()
                                 }
                             });
                         });
                     }else{
-                        $(".botton,.qwestion").hide()
+                        $(".rating_bottom,.qwestion").hide()
                     }
                 }
             });

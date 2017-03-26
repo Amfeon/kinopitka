@@ -1,8 +1,25 @@
+.wraper {
+  width: 100%;
+  height: calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+}
+
+html {
+  height: 100%;
+  font-family: "Lato";
+  font-size: 18px;
+}
+
+body {
+  background: #300303;
+  height: 100%;
+}
+
 .header,
 .footer {
   display: flex;
   flex-wrap: wrap;
-  min-height: 50px;
   background: linear-gradient(#3c3c3c, #222);
 }
 
@@ -36,7 +53,7 @@ h5 {
 .container {
   max-width: 1170px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 50px;
   background: white;
   border-radius: 10px;
 }
@@ -49,9 +66,9 @@ h5 {
 }
 
 .container h1 {
-  font-size: 36px;
+  font-size: 32px;
   padding: 15px;
-  width: calc(100% - 70px);
+  width: calc(100% - 80px);
   margin: 20px;
 }
 
@@ -80,19 +97,6 @@ ul,
 body {
   padding: 0;
   margin: 0;
-}
-
-html,
-body {
-  height: 100%;
-  font-family: "Lato";
-  font-size: 18px;
-}
-
-body {
-  display: flex;
-  background: #300303;
-  flex-direction: column;
 }
 
 .more_scroll {
@@ -139,8 +143,6 @@ body {
 
 .header {
   width: calc(100% - 20px);
-  display: flex;
-  flex-wrap: wrap;
   padding: 0 10px;
 }
 
@@ -165,6 +167,7 @@ body {
   justify-content: center;
   color: white;
   text-decoration: none;
+  padding: 10px;
 }
 
 .header .menu a:hover,
@@ -356,12 +359,39 @@ body {
 }
 
 .share .vote .rating_bottom {
-  background: #1E86E1;
+  background: linear-gradient(to bottom, #96d1f4 0, #44c2f0 100%);
   color: white;
   padding: 5px;
   width: 50px;
   border-radius: 5px;
+  border: 1px solid #44c2f0;
   text-align: center;
+  cursor: pointer;
+}
+
+.share .vote .rating_bottom:hover {
+  background: #2aabd2;
+}
+
+.share .vote .progress {
+  width: calc(100% - 200px);
+  border: 1px solid #aaaaaa;
+  background: transparent linear-gradient(to top, #ddd, #aaa) repeat scroll 0 0;
+  height: 30px;
+}
+
+.share .vote .progress .progress-bar {
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px #732372, 1px -1px #732372, -1px 1px #732372, -1px -1px #732372, 3px 3px 6px rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+  background: repeating-linear-gradient(45deg, transparent, transparent 10px, #48baed 10px, #319db9 20px), linear-gradient(to bottom, #96d1f4, #44c2f0);
+}
+
+.share .social {
+  width: calc(100%- 20px);
+  text-align: center;
+  margin: 10px;
 }
 
 @media screen and (max-width: 1100px) {

@@ -10,11 +10,24 @@ $color-info:#31708f;
 $color-success:#3c763d;
 $color-warning:#8a6d3b;
 $text_color: #0077d3;
-
+.wraper{
+  width:100%;
+  height:calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+}
+html{
+  height: 100%;
+  font-family: "Lato";
+  font-size: 18px;
+}
+body{
+  background: #300303;
+  height: 100%;
+}
 .header, .footer{
   display: flex;
   flex-wrap: wrap;
-  min-height: 50px;
   background: $gradient-dark;
   li{
     display: inline-block;
@@ -41,9 +54,10 @@ h1,h2,h3,h4,h5{
 .container{
   max-width:1170px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 50px;
   background: white;
   border-radius: 10px;
+
   .col{
     margin:0 15px;
     width:calc(8.33333333% -  #{$offset});
@@ -51,9 +65,9 @@ h1,h2,h3,h4,h5{
     background: $color;
   }
   h1{
-    font-size:36px;
+    font-size:32px;
     padding: 15px;
-    width: calc(100% - 70px);
+    width: calc(100% - 80px);
     margin: 20px;
   }
 }
@@ -77,17 +91,7 @@ ul, body{
   padding: 0;
   margin: 0;
 }
-html,body{
-  height: 100%;
-  font-family: "Lato";
-  font-size: 18px;
-}
-body{
-  display: flex;
-  background: #300303;
-  flex-direction: column;
 
-}
 .more_scroll{
   display: flex;
   justify-content:center;
@@ -115,8 +119,6 @@ color: white;
 }
 .header{
   width: calc(100% - 20px);
-  display: flex;
-  flex-wrap: wrap;
    padding: 0 10px;
   .logo{
     margin: 0 15px;
@@ -145,6 +147,7 @@ color: white;
       justify-content: center;
       color: white;
       text-decoration: none;
+      padding: 10px;
       &:hover, .active{
         background: #000;
       }
@@ -316,12 +319,48 @@ color: white;
     justify-content: space-around;
     margin: 10px 0px;
     .rating_bottom{
-      background: #1E86E1;
+      background: linear-gradient(to bottom, #96d1f4 0, #44c2f0 100%);;
       color: white;
       padding: 5px;
       width: 50px;
       border-radius: 5px;
+      border: 1px solid #44c2f0;
       text-align: center;
+      cursor: pointer;
+      &:hover{
+        background:#2aabd2;
+      }
     }
+    .progress{
+      width:calc(100% - 200px) ;
+      border:1px solid #aaaaaa;
+      background: rgba(0, 0, 0, 0) linear-gradient(to top, #ddd, #aaa) repeat scroll 0 0;
+      height: 30px;
+      .progress-bar{
+        text-align: center;
+        color: white;
+        text-shadow:1px 1px #732372, 1px -1px #732372, -1px 1px #732372, -1px -1px #732372, 3px 3px 6px rgba(0,0,0,.5);
+        font-size: 18px;
+        background:   /* Сверху */
+                repeating-linear-gradient(
+                                45deg,
+                                transparent,
+                                transparent 10px,
+                                #48baed 10px,
+                                #319db9 20px
+                ),
+                  /* Снизу */
+                linear-gradient(
+                                to bottom,
+                                #96d1f4,
+                                #44c2f0
+                );
+      }
+    }
+  }
+  .social{
+    width: calc(100%- 20px);
+    text-align: center;
+    margin: 10px;
   }
 }

@@ -31,11 +31,11 @@
     <div class="search">
         <form action="http://yandex.ru/sitesearch" method="get">
             <input name="search" placeholder="Найти фильм" type="search" required>
-            <input class ="button" type="submit" value="Жмахай">
+            <input class ="button" type="submit" value="поиск">
         </form>
     </div>
 </nav>
-
+<div class="wraper">
 @yield('content')
 
 <footer class="footer">
@@ -43,6 +43,7 @@
     Копирайты и все такое =)
     </p>
 </footer>
+</div>
 <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
 @yield('scripts')
 </body>

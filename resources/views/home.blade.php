@@ -6,36 +6,38 @@
     </title>
 @endsection
 @section('content')
-<main class="container">
-    <div class="row">
-        <h1> Даты выхода фильмов в кинотеатрах России </h1>
-        <p>
-           Представляем вашему вниманию даты выхода самых ожидаемых фильмов.
-        </p>
-    </div>
-    <div class="row">
-        <ul id='scroll' >
-            @foreach($films as $film)
-                <li>
-                <div class='poster'>
-                    <div class="stripe_up">
-                        {{$film->title}}
-                    </div>
-                    <a href='film/{{$film->id}}'>
-                        <img  width="150" height="250" src ='{{$film->image}}' alt='Подробнее о фильме {{$film->title}}' title='Подробнее о фильме {{$film->title}}'/>
-                    </a>
-                    <div class="stripe_down">Дата Выхода:<br/> {{$film->release}}</div>
-                </div>
-                </li>
-            @endforeach
-        </ul>
-    </div>
-    <div id="more" class="more_scroll">
-        <p>
-        Показать еще
-        </p>
-    </div>
-</main>
+
+        <main class="container">
+            <div class="row">
+                <h1> Даты выхода фильмов в кинотеатрах России </h1>
+                <p>
+                    Представляем вашему вниманию даты выхода самых ожидаемых фильмов.
+                </p>
+            </div>
+            <div class="row">
+                <ul id='scroll' >
+                    @foreach($films as $film)
+                        <li>
+                            <div class='poster'>
+                                <div class="stripe_up">
+                                    {{$film->title}}
+                                </div>
+                                <a href='film/{{$film->id}}'>
+                                    <img  width="150" height="250" src ='{{$film->image}}' alt='Подробнее о фильме {{$film->title}}' title='Подробнее о фильме {{$film->title}}'/>
+                                </a>
+                                <div class="stripe_down">Дата Выхода:<br/> {{$film->release}}</div>
+                            </div>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+            <div id="more" class="more_scroll">
+                <p>
+                    Показать еще
+                </p>
+            </div>
+        </main>
+
 @endsection
 @section('scripts')
 <script type="text/javascript">
