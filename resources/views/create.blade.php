@@ -35,7 +35,7 @@
          <input type="text" class="form-control"  name="title" required value="{{Request::old('title')}}">
 
          <label class="control-label">Оригинальное</label>
-         <input type="text" class="form-control"  name="original" value="{{Request::old('original')}}" required >
+         <input type="text" class="form-control"  id="original" name="original" value="{{Request::old('original')}}" required >
 
          <label class="control-label">Дата выхода</label>
          <input type="date" class="form-control"  name="release" value="{{@date('Y-m-d')}}" required>
@@ -44,7 +44,8 @@
          <input type="date" class="form-control"  name="Blu_ray"  value="{{@date('Y-m-d')}}" required>
 
          <label class="control-label">Картинка</label>
-         <input type="text" class="form-control"  name="image" required value="{{Request::old('image')}}">
+           <div class="btn btn-warning" id="parse_image">Спарсить</div>
+         <input type="text" class="form-control" id="image" name="image" required value="{{Request::old('image')}}">
 
       </div>
 
@@ -78,7 +79,6 @@
     $(document).ready(function(){
         $('#parse').on('click', function(){
             var url=$('#imdb').val();
-
             $.ajax({
                 type:'GET',
                 url: "parse",
@@ -89,6 +89,20 @@
                 }
             })
         });
+        $('#parse_image').on('click', function(){
+            var url_image=$('#image').val();
+            var title_image=$('#original').val();
+            $.ajax({
+                type:'GET',
+                url: "parseImage",
+                cache: false,
+                data: {url_image: url_image,title: title_image},
+                success: function(html){
+                    $("#image").html(html);
+                }
+            })
+        });
+
     });
 </script>
 @endsection

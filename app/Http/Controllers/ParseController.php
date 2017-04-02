@@ -105,8 +105,13 @@ class ParseController extends Controller
                 'title' => $title,
                 'data' => $data);
             $original = preg_replace('~[[:punct:]]|[[:space:]]~', '', $original); // очищаем от всякой пунктуации
-            $pic = $this->getImage($image_sourse, $original); // добываем изображение
-            $massData['image'] = $pic;
+            if(isset($image_sourse)){
+                $pic = $this->getImage($image_sourse, $original); // добываем изображение
+                $massData['image'] = $pic;
+            }else{
+                $massData['image']='NoPoster';
+            }
+
             return view('parseFormImdb', ['massData' => $massData]);
         }
     }
@@ -236,6 +241,12 @@ class ParseController extends Controller
            }
        }
         //return redirect('/admin');
+    }
+    public function parseImage(Request $request){
+        $url=$request->url_image;
+        $title=$request->title;
+        $link= $this->getImage($url,$title);
+        echo $link;
     }
 }
 

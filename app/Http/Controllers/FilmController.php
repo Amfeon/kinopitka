@@ -135,7 +135,7 @@ class FilmController extends Controller
             $mass_date=['Blu_ray'=>$Blu_ray];
             return view('updateForm',['films'=>$films, 'mass_date'=>$mass_date]);
         }else{
-            $films=$filmModel->getFilm();// создать получение всех записей
+              $films=$filmModel->getFilm();// создать получение всех записей
             return view('show',['films'=>$films]);
         }
     }

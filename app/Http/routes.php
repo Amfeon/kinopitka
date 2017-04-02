@@ -25,6 +25,7 @@ Route::group(['middleware'=> 'auth'],function(){
     Route::get('/delete/{id}','FilmController@drop');
     Route::get('/parse_blu_ray','ParseController@update_Blu_ray');
     Route::get('/parse','ParseController@parse');// поменять на парсер
+    Route::get('/parseImage','ParseController@parseImage');// поменять на парсер
 });
 
 Route::get('/film/{id}', 'FilmController@index')->where(['id'=>'[0-9]+']);

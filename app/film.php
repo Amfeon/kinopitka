@@ -77,7 +77,7 @@ public function createFilm($date){
     //return DB::insert('INSERT INTO `films` (`title`, `image`, `original`, `plot`, `imdb`, `Blu_ray`, `release`, `description`, `created_at`, `updated_at`,`DVD_source`,`kinopoisk`, `director`,`actors` ,`trailer`) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [$title, $image, $original, $plot, $imdb, $Blu_ray, $release, $description,Carbon::now(),Carbon::now(),$DVD_sourse,$kinopoisk,$director,$actors,$trailer]);
 }
     public function getFilm(){
-        $a=DB::select('select id,title from films ');
+        $a=DB::select('select id,title from films ORDER BY id DESC ');
         return $a;
     }
     public function getUpdatedFilm($id){
