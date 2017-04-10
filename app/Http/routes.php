@@ -38,6 +38,7 @@ Route::post('/ratingAdd','RatingController@calcRating'); //нужен будет
 Route::get('/release-changes','NewsController@changes_show');
 Route::get('/profile','UserController@profile');
 Route::post('/profile','UserController@update_avatar');
+Route::get('/sitemap.xml','SitemapController@index');
 
 
 /*Route::get('/create',['middleware'=> 'auth'

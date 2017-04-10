@@ -98,7 +98,7 @@
                 cache: false,
                 data: {url_image: url_image,title: title_image},
                 success: function(html){
-                    $("#image").html(html);
+                    $("#image").val(html);
                 }
             })
         });
