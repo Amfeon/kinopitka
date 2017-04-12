@@ -6,7 +6,11 @@
     </title>
 @endsection
 @section('content')
+    <div id="page-preloader" class="preloader">
+        <div class="loader">
 
+        </div>
+    </div>
         <main class="container">
             <div class="row">
                 <h1> Даты выхода фильмов в кинотеатрах России </h1>
@@ -46,9 +50,20 @@
     });
 </script>
 <script type="text/javascript">
+ /*   document.body.onload = function () {
+        setTimeout(function () {
+            var preloader = document.getElementById('page-preloader');
+            if(!preloader.classList.contains('done')){
+                preloader.classList.add('done');
+            }
+        },100)
+    }*/
+</script>
+<script type="text/javascript">
     $(document).ready(function () {
         var start=12;
         $("#more").click(function () {
+                $('#page-preloader').fadeIn();
             var btn = $(this)
             btn.text('loading...')
             $.ajax({
@@ -62,10 +77,10 @@
                     }else {
                         //console.log(html);
                         start=start+12;
-                        alert(start);
                         $('#scroll').append(html);
 
                     }
+                    $('#page-preloader').fadeOut();
                 } //контент подгружается в div#content
             }).always(function () {
                 btn.text('Показать еще')

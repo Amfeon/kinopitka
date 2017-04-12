@@ -3,7 +3,7 @@
     {{--@foreach($film as $film)--}}
     <meta name="description" content="{{$film->description}}">
     <title>
-        {{$film->title}} / {{$film->original}} дата выхода и Blu-ray релиза
+        {{$film->title}} / {{$film->original}} дата выхода и Blu-ray / HD релиза
     </title>
 
 @endsection
@@ -34,7 +34,7 @@
         </div>
         <div class="date_block">
             <div class="stroka"><strong >Дата выхода в России: </strong>                             <p class="date"> {{@date('d-m-Y', strtotime($film->release))}} года</p></div>
-            <div class="stroka"><strong >Blu-Ray релиз предположительно: </strong>             <p class="date"> {{@date('d-m-Y', strtotime($film->Blu_ray))}} года</p></div>
+            <div class="stroka"><strong >Blu-Ray /HD релиз предположительно: </strong>             <p class="date"> {{@date('d-m-Y', strtotime($film->Blu_ray))}} года</p></div>
             <div class="share" id="rating">
 
             </div>

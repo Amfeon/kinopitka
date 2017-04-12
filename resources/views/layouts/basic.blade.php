@@ -23,7 +23,7 @@
         </a>
         <a href="{{ url('/blu-ray') }}">
             <div >
-                Blu-Ray релизы
+                Blu-Ray/ HD релизы
             </div>
         </a>
 
