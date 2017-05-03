@@ -181,6 +181,7 @@ class ParseController extends Controller
         foreach ($all->find('//*[@id="leftcolumn"]/div[2]/div[1]/table/tbody/tr/td[2]/table/tbody/tr[1]/td/h2/span[1]') as $link) {
             $data = $link->innertext;
             $data = preg_replace('~is estimated for~', '', $data);
+
         }
         if ($data == 'not announced') {
             return 0;
@@ -190,12 +191,15 @@ class ParseController extends Controller
                 $itunes_date = $link->innertext;
                 if ($itunes_date != 'not announced') {
                     $data = $itunes_date;
+                    $data = preg_replace('~is estimated for~', '', $data);
                 }
             }
         }
         //Фишка с месяцем
         //  if($data!=null){
+
         $mass = explode(',', $data);
+
         if (isset($mass[1])) {
             $year = $mass[1];
             $temp = explode(' ', $mass[0]);

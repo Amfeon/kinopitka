@@ -12,7 +12,6 @@ $color-warning:#8a6d3b;
 $text_color: #0077d3;
 .wraper{
   width:100%;
-  height:calc(100% - 50px);
   display: flex;
   flex-direction: column;
 }
@@ -198,6 +197,9 @@ color: white;
     border-radius: 5px;
     padding: 4px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
+  }
+  .star{
+    padding: 0px;
   }
   }
 .date_block {
