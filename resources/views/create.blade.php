@@ -18,7 +18,7 @@
          <input type="text" class="form-control" id="kinopoisk"  name="kinopoisk" required value="{{Request::old('kinopoisk')}}">
 
          <label class="control-label">Источник дат DVD</label>
-         <input type="text" class="form-control" id="DVD_sourse"  name="DVD_sourse" required value="{{Request::old('DVD_sourse')}}">
+         <input type="text" class="form-control" id="DVD_sourсe"  name="DVD_sourсe" required value="{{Request::old('DVD_sourсe')}}">
 
          <label class="control-label">Режиссер</label>
          <input type="text" class="form-control"  name="director" value="{{Request::old('director')}}" >

@@ -62,7 +62,7 @@ class FilmController extends Controller
                 $kino->Blu_ray=$request->Blu_ray;
                 $kino->release=$request->release;
                 $kino->description=$request->description;
-                $kino->DVD_source=$request->DVD_sourse;
+                $kino->DVD_source=$request->dvd_source;
                 $kino->kinopoisk=$request->kinopoisk;
                 $kino->director=$request->director;
                 $kino->actors=$request->actors;
@@ -98,7 +98,7 @@ class FilmController extends Controller
                         'description' => $request->description,
                         'created_at' => Carbon::now(),
                         'updated_at' => Carbon::now(),
-                        'DVD_source' => $request->DVD_sourse,
+                        'DVD_source' => $request->DVD_sourсe,
                         'kinopoisk' => $kinopoisk,
                         'director' => $request->director,
                         'actors' => $request->actors,

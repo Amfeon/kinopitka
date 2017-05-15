@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
-HOST: kinopitka.ru
+HOST: https://kinopitka.ru
 Sitemap: https://kinopitka.ru/sitemap.xml

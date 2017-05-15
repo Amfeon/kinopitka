@@ -1,7 +1,13 @@
 @extends('layouts.basic')
 @section('head')
     {{--@foreach($film as $film)--}}
-    <meta name="description" content="{{$film->description}}">
+    <meta  property="og:title" content="{{$film->title}}">
+    <meta  property="og:type" content="video.movie">
+    <meta  property="og:url" content="{{url()->current()}}">
+    <meta  property="og:image" content="{{$film->image}}">
+    <meta  property="og:video:director" content="{{$film->director}}">
+    <meta  property="og:video:release_date" content="{{$film->release}}">
+    <meta name="description"  property="og:description" content="{{$film->description}}">
     <title>
         {{$film->title}} / {{$film->original}} дата выхода и Blu-ray / HD релиза
     </title>
@@ -13,12 +19,12 @@
     <li><a href="{{ url('/release-changes') }}">Новости релизов</a>
 @endsection
 @section('content')
-<main class="container">
-    <h1 class="success">{{$film->title}} / {{$film->original}}</h1>
+<main class="container" itemscope itemtype="http://schema.org/Movie">
+    <h1 class="success" itemprop="name">{{$film->title}} / {{$film->original}}</h1>
     <div class="row ">
         <div class="image_block">
             <div class="picture">
-                <img class="img-thumbnail" title="{{$film->title}}" alt="{{$film->title}}" src="{{'../'.$film->image}}">
+                <img itemprop="image" class="img-thumbnail" title="{{$film->title}}" alt="{{$film->title}}" src="{{'../'.$film->image}}">
             </div>
             <div class="icon">
                 @if($film->release<=@date('Y-m-d'))
@@ -33,13 +39,13 @@
 
         </div>
         <div class="date_block">
-            <div class="stroka"><strong >Дата выхода в России: </strong>                             <p class="date"> {{@date('d-m-Y', strtotime($film->release))}} года</p></div>
-            <div class="stroka"><strong >Blu-Ray /HD релиз предположительно: </strong>             <p class="date"> {{@date('d-m-Y', strtotime($film->Blu_ray))}} года</p></div>
+            <div class="stroka"><strong >Дата выхода в России: </strong>                             <p class="date"> <span itemprop="datePublished">{{@date('d-m-Y', strtotime($film->release))}}</span> года</p></div>
+            <div class="stroka"><strong >Blu-Ray /HD релиз предположительно: </strong>               <p class="date"> {{@date('d-m-Y', strtotime($film->Blu_ray))}} года</p></div>
             <div class="share" id="rating">
 
             </div>
-            <div class="stroka"><strong >Режиссер: </strong>             <p class="date"> {{$film->director}}</p></div>
-            <div class="actors"><strong >Актеры: </strong>               <p class="date">{{$film->actors}}</p></div>
+            <div class="stroka"><strong >Режиссер: </strong>             <p class="date" itemprop="director"> {{$film->director}}</p></div>
+            <div class="actors"><strong >Актеры: </strong>               <p class="date" itemprop="actors">{{$film->actors}}</p></div>
         </div>
     </div>
     <article class="row article">
@@ -49,9 +55,9 @@
         </div>
 
             @foreach($trailers as $trailer)
-                <div class="trailer">
-                    <h3>{{$trailer->title}}</h3>
-                    {!! $trailer->trailer!!}
+                <div class="trailer" >
+                    <h3 >{{$trailer->title}}</h3>
+                    <span >{!! $trailer->trailer!!}</span>
                 </div>
             @endforeach
     </article>

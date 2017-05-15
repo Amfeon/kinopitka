@@ -16,7 +16,7 @@
             <input type="text" class="form-control"  name="kinopoisk" value="{{$film->kinopoisk}}">
 
             <label class="control-label">Источник DVD</label>
-            <input type="text" class="form-control"  name="DVD_source" value="{{$film->DVD_source}}">
+            <input type="text" class="form-control" name="dvd_source" value="{{$film->DVD_source}}">
 
             <label class="control-label">Название фильма</label>
             <input type="text" class="form-control"  name="title" value="{{$film->title}}">
@@ -50,6 +50,8 @@
             <textarea class="form-control" id="text" name="text">{{$film->plot}}</textarea>
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <input class="btn btn-primary" type="submit" value="обновить">
+            <button name="cmdSpell" type="button" onclick="spellCheck()">Проверить правописание</button>
+            <button type="button" onclick="speller.optionsDialog()"> Параметры...</button>
         </form>
 @endforeach
     </div>
@@ -65,4 +67,13 @@
                 '//www.tinymce.com/css/codepen.min.css'
             ]
         });</script>
+    <script type="text/javascript" src="speller/spell.js"></script>
+    <script type="text/javascript">
+        var speller = new Speller({ url:"speller", lang:"ru", options:Speller.IGNORE_URLS });
+
+        function spellCheck() {
+            var form = document.forms["myform"];
+            speller.check([ form.ctrl_1, form.ctrl_2, ..., form.ctrl_N ]);
+        }
+    </script>
 @endsection

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Yangqi\Htmldom\Htmldom;
 use App\Http\Requests;
 use App\film;
+use App\FilmChange;
 use Symfony\Component\DomCrawler\Crawler;
 
 class ParseController extends Controller
@@ -221,7 +222,7 @@ class ParseController extends Controller
     }
     //обновление DVD релизов
     public function update_Blu_ray(){
-        $updated_films =Film::select('id' ,'Blu_ray','DVD_source')-> whereBetween('Blu_ray',[Carbon::now()->subWeekday(20),Carbon::now()->addMonth()])
+        $updated_films =Film::select('id' ,'Blu_ray','DVD_source')-> whereBetween('Blu_ray',[Carbon::now()->subWeekday(20),Carbon::now()->addMonth(8)])
             ->get();
        foreach ($updated_films as $film){
            //доделать функцию обновления даты
@@ -231,15 +232,16 @@ class ParseController extends Controller
                 if($new_date!=$film->Blu_ray){
                     //Сделать функцию добавления в новости
                     $film_model=Film::find($film->id);
+
                     $film_model->Blu_ray=$new_date;
                     $film_model->save();
                     FilmChange::insert([
                         'film_id'=>$film->id,
                         'Blu_ray'=>1
                     ]);
-                    echo "Дата изменена";
+                    echo "Дата изменена".$film_model->title."<br>";
                 }else{
-                    echo "Даты совпали";
+                    echo "Даты совпали <br>";
                     continue;
                 }
            }
