@@ -1,7 +1,7 @@
 @extends('layouts.basic')
 @section('head')
     {{--@foreach($film as $film)--}}
-    <meta  property="og:title" content="{{$film->title}}">
+    <meta  property="og:title" content="{{$film->title}} дата выхода Blu-Ray релиза">
     <meta  property="og:type" content="video.movie">
     <meta  property="og:url" content="{{url()->current()}}">
     <meta  property="og:image" content="{{$film->image}}">
@@ -9,7 +9,7 @@
     <meta  property="og:video:release_date" content="{{$film->release}}">
     <meta name="description"  property="og:description" content="{{$film->description}}">
     <title>
-        {{$film->title}} / {{$film->original}} дата выхода и Blu-ray / HD релиза
+        {{$film->title}} / {{$film->original}} дата выхода на DVD / Blu-ray / HD и в iTunes
     </title>
 
 @endsection
@@ -32,7 +32,7 @@
                         <img  src="http://rating.kinopoisk.ru/{{$film->kinopoisk}}.gif" alt="{{$film->title}}">
                     </a>
                     <span class='imdbRatingPlugin'  data-title='{{$film->imdb}}' data-style='p2'>
-						<a href='https://www.imdb.com/title/{{$film->imdb}}' ><img alt='on IMDb' src='http://g-ecx.images-amazon.com/images/G/01/imdb/plugins/rating/images/imdb_46x22.png'>
+						<a href='https://www.imdb.com/title/{{$film->imdb}}' ><img alt='on IMDb' src='/css/images/imdb_46x22.png'>
 						</a></span>
                 @endif
             </div>
@@ -40,12 +40,12 @@
         </div>
         <div class="date_block">
             <div class="stroka"><strong >Дата выхода в России: </strong>                             <p class="date"> <span itemprop="datePublished">{{@date('d-m-Y', strtotime($film->release))}}</span> года</p></div>
-            <div class="stroka"><strong >Blu-Ray /HD релиз предположительно: </strong>               <p class="date"> {{@date('d-m-Y', strtotime($film->Blu_ray))}} года</p></div>
-            <div class="share" id="rating">
-
-            </div>
+            <div class="stroka"><strong >Дата DVD / Blu-Ray (iTunes) релиза </strong>               <p class="date"> {{@date('d-m-Y', strtotime($film->Blu_ray))}} года</p></div>
             <div class="stroka"><strong >Режиссер: </strong>             <p class="date" itemprop="director"> {{$film->director}}</p></div>
             <div class="actors"><strong >Актеры: </strong>               <p class="date" itemprop="actors">{{$film->actors}}</p></div>
+            <div class="share" id="rating">
+            </div>
+
         </div>
     </div>
     <article class="row article">

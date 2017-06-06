@@ -578,3 +578,7 @@ body {
     width: calc(8.333333333333334%*12 - 30px);
   }
 }
+.ya-site-form__submit:hover{
+  cursor: pointer;
+  background: #44c2f0;
+}
