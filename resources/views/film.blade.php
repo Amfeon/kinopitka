@@ -29,7 +29,7 @@
             <div class="icon">
                 @if($film->release<=@date('Y-m-d'))
                     <a class="row" href="http://www.kinopoisk.ru/film/{{$film->kinopoisk}}/">
-                        <img  src="http://rating.kinopoisk.ru/{{$film->kinopoisk}}.gif" alt="{{$film->title}}">
+                        <img  src="https://rating.kinopoisk.ru/{{$film->kinopoisk}}.gif" alt="{{$film->title}}">
                     </a>
                     <span class='imdbRatingPlugin'  data-title='{{$film->imdb}}' data-style='p2'>
 						<a href='https://www.imdb.com/title/{{$film->imdb}}' ><img alt='on IMDb' src='/css/images/imdb_46x22.png'>
