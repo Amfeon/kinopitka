@@ -39,8 +39,8 @@
 
         </div>
         <div class="date_block">
-            <div class="stroka"><strong >Дата выхода в России: </strong>                             <p class="date"> <span itemprop="datePublished">{{@date('d-m-Y', strtotime($film->release))}}</span> года</p></div>
-            <div class="stroka"><strong >Дата DVD / Blu-Ray (iTunes) релиза </strong>               <p class="date"> {{@date('d-m-Y', strtotime($film->Blu_ray))}} года</p></div>
+            <div class="stroka"><strong >Дата выхода в России: </strong>                            <p class="date"> <span itemprop="datePublished">{{$date['date_release']}}</span> года</p></div>
+            <div class="stroka"><strong >Дата DVD / Blu-Ray (iTunes) релиза </strong>               <p class="date"> {{$date['Blu_ray_release']}} года</p></div>
             <div class="stroka"><strong >Режиссер: </strong>             <p class="date" itemprop="director"> {{$film->director}}</p></div>
             <div class="actors"><strong >Актеры: </strong>               <p class="date" itemprop="actors">{{$film->actors}}</p></div>
             <div class="share" id="rating">

@@ -36,9 +36,13 @@
 @yield('content')
 
 <footer class="footer">
-    <p>
-    Копирайты и все такое =)
-    </p>
+    <p> Всем хаюшки, меня зовут Дмитрий и я администратор сего сайта, если у вас есть вопросы или предложения, не стесняйтесь:</p>
+    <ul class='list-group'>
+        <li class="list-group-item"><a target="_blank" rel='nofollow' href="https://vk.com/amfeon90" title="Вконтакте">Я в Контактике</a> </li>
+        <li class="list-group-item"><a target="_blank" rel='nofollow' href="http://www.youtube.com/channel/UCPK8GKDoB01K8e0NEOgO_sw" title="ТыТруба">Я в Ютубушке</a></li>
+        <li class="list-group-item"><a target="_blank" rel="author" href="https://plus.google.com/u/0/115214208930230673302">Я в Гугл+</a></li>
+        <li class="list-group-item">ну и старая добрая почта Amfeon@bk.ru</li>
+    </ul>
 </footer>
 </div>
 <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>

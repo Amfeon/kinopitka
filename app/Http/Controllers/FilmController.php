@@ -39,7 +39,14 @@ class FilmController extends Controller
         //$film = $FilmModel->getPublishedFilm($id);
         $film=Film::where('id',$id)->first();
         $trailer=Film::find($id)->trailers;
-        return view('film',['film' => $film,'trailers'=>$trailer]);
+        $release=$film->release;
+        $release=explode('-',$release);
+        $date_release['date_release']=$release[2].$this->ToRussia($release[1]).$release[0];
+        $release=$film->Blu_ray;
+        $release=explode('-',$release);
+        $date_release['Blu_ray_release']=$release[2].$this->ToRussia($release[1]).$release[0];
+        return view('film',['film' => $film,'trailers'=>$trailer,'date'=>$date_release]);
+     //   return view('film',['film' => $film,'trailers'=>$trailer]);
     }
     public  function create(){
         $this->authorize('admin');
@@ -251,6 +258,24 @@ class FilmController extends Controller
             case 10: $month='October';break;
             case 11: $month='November';break;
             case 12: $month='December';break;
+            default: return "ошибка порядкового номера месяца";
+        }
+        return $month;
+    }
+    public function ToRussia($month){
+        switch ($month){
+            case 1: $month=' Января ';break;
+            case 2: $month=' Февраля ';break;
+            case 3: $month=' Марта ';break;
+            case 4: $month=' Апреля ';break;
+            case 5: $month=' Мая ';break;
+            case 6: $month=' Июня ';break;
+            case 7: $month=' Июля ';break;
+            case 8: $month=' Августа ';break;
+            case 9: $month=' Сентября ';break;
+            case 10: $month=' Октября ';break;
+            case 11: $month=' Ноября ';break;
+            case 12: $month=' Декабря ';break;
             default: return "ошибка порядкового номера месяца";
         }
         return $month;

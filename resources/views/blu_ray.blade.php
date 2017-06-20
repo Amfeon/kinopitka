@@ -30,7 +30,7 @@
                             <a href='/film/{{$film->id}}'>
                                 <img  width="150" height="250" src ='/{{$film->image}}' alt='Подробенее о фильме {{$film->title}}' title='Подробенее о фильме {{$film->title}}'/>
                             </a>
-                            <div class="stripe_down">Blu-ray релиз:<br/> {{$film->Blu_ray}}</div>
+                            <div class="stripe_down">Blu-ray релиз:<br/> {{@date('d-m-Y', strtotime($film->Blu_ray))}}</div>
                         </div>
                     </li>
                 @endforeach

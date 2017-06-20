@@ -1,5 +1,6 @@
 .wraper {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -24,17 +25,24 @@ body {
   border: 1px solid black;
 }
 
-.header li,
-.footer li {
-  display: inline-block;
-  padding: 5px;
-  border: 1px solid #aaa;
-}
-
 .footer {
   margin-top: auto;
   justify-content: center;
+  text-align: center;
   color: #aaa;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer li {
+  list-style: none;
+  padding: 10px;
+}
+
+.footer a {
+  color: #19cff0;
 }
 
 h1,
@@ -577,8 +585,4 @@ body {
   .news_date {
     width: calc(8.333333333333334%*12 - 30px);
   }
-}
-.ya-site-form__submit:hover{
-  cursor: pointer;
-  background: #44c2f0;
 }
