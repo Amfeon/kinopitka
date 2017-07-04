@@ -179,7 +179,8 @@ class FilmController extends Controller
             }
             $prev_month=$this->IntToString($prev_month);
             $dt=Carbon::now()->month;
-            if ($month==$dt){
+            $dy=Carbon::now()->year;
+            if ($month==$dt&&$mass[1]==$dy){
                 return redirect('/blu-ray/');
             }
             /* МЕсяц нужно преобразовать в цыфру,а потом сравнить с текущим*/

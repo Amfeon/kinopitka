@@ -11,7 +11,6 @@
     <title>
         {{$film->title}} / {{$film->original}} дата выхода на DVD / Blu-ray / HD и в iTunes
     </title>
-
 @endsection
 @section('menu')
     <li ><a href="{{ url('/') }}">Даты выхода</a></li>
@@ -36,7 +35,6 @@
 						</a></span>
                 @endif
             </div>
-
         </div>
         <div class="date_block">
             <div class="stroka"><strong >Дата выхода в России: </strong>                            <p class="date"> <span itemprop="datePublished">{{$date['date_release']}}</span> года</p></div>
@@ -45,7 +43,6 @@
             <div class="actors"><strong >Актеры: </strong>               <p class="date" itemprop="actors">{{$film->actors}}</p></div>
             <div class="share" id="rating">
             </div>
-
         </div>
     </div>
     <article class="row article">
@@ -53,7 +50,6 @@
             <h3 class="info" >Сюжет:</h3>
             {!!$film->plot!!}
         </div>
-
             @foreach($trailers as $trailer)
                 <div class="trailer" >
                     <h3 >{{$trailer->title}}</h3>
@@ -62,9 +58,6 @@
             @endforeach
     </article>
 </main>
-
-    {{--@endforeach --}}
-
 @endsection
 @section('scripts')
     <!-- JavaScripts -->
@@ -74,7 +67,6 @@
             headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
         });
     </script>
-
     <script type="text/javascript">
         $(document).ready(function () {
             $.ajax({

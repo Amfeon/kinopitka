@@ -46,38 +46,45 @@ class ParseController extends Controller
             $mm1 = "12";
         return $mm1;
     }
-
+    public function getReleaseImdb($url){
+        $flag = 0;
+        // $url='http://www.imdb.com/title/tt4765284/';
+        $url =  'http://www.imdb.com/title/'.$url.'/';
+        $simpleHTML = new Htmldom();
+        $all = $simpleHTML->file_get_html($url);
+        for($i=2;$i<5;$i++){
+            foreach ($all->find('//*[@id="titleDetails"]/div['.$i.']') as $link) {
+                $data = $link->innertext;
+                if(substr_count($data,'Release Date')){
+                    echo "Запись найдена";
+                    break 2;
+                }
+            }
+        }
+        $russia = 0;
+        $russia = substr_count($data, '(Russia)');// наличие отечественного названия
+        if ($russia != 0) {
+            // echo "Отечественная дата:<br>";
+            preg_match('~[[:digit:]]{1,2} [[:alpha:]]{3,9} [[:digit:]]{4}~', $data, $array);
+            $date = explode(' ', $array[0]);
+            $data = $date[2] . '-' . $this->dat($date[1]) . '-' . $date[0];
+        }else{
+            $data=null;
+        }
+        return $data;
+    }
     public function parse(Request $request)
     {
         if (isset($request->url)) {
             $flag = 0;
             $url = $request->url;
-            // $url =  'http://www.imdb.com/title/tt3717252/';
             $simpleHTML = new Htmldom();
             $all = $simpleHTML->file_get_html($url);
+            $release_date=$this->getReleaseImdb($url);
             foreach ($all->find('//*[@id="title-overview-widget"]/div[2]/div[3]/div[1]/a/img') as $link) {
                 $image_sourse = $link->src;
             }
-            for($i=2;$i<5;$i++){
-                foreach ($all->find('//*[@id="titleDetails"]/div['.$i.']') as $link) {
-                   $data = $link->innertext;
-                   if(substr_count($data,'Release Date')){
-                       echo "Запись найдена";
-                       break 2;
-                   }
-
-                }
-            }
-            $russia = 0;
-            $russia = substr_count($data, '(Russia)');// наличие отечественного названия
-            if ($russia != 0) {
-                // echo "Отечественная дата:<br>";
-                preg_match('~[[:digit:]]{1,2} [[:alpha:]]{3,9} [[:digit:]]{4}~', $data, $array);
-                $date = explode(' ', $array[0]);
-                $data = $date[2] . '-' . $this->dat($date[1]) . '-' . $date[0];
-            }else{
-                $data=Carbon::now();
-            }
+            //поиск заголовка
             foreach ($all->find('//*[@id="title-overview-widget"]/div[2]/div[2]/div/div/div[2]/h1') as $link) {
                 $title = $link->innertext;
                  $title = preg_replace('~<span.*<\/span>~', '', $title);
@@ -93,10 +100,7 @@ class ParseController extends Controller
                     }
                 }
             }
-
-
-
-            $title = trim($title);
+           $title = trim($title);
             if ($flag == 1) {// если нерусское
                 $original = $title;
             } else {
@@ -104,7 +108,7 @@ class ParseController extends Controller
             }
             $massData = array('original' => $original,
                 'title' => $title,
-                'data' => $data);
+                'data' => $release_date);
             $original = preg_replace('~[[:punct:]]|[[:space:]]~', '', $original); // очищаем от всякой пунктуации
             if(isset($image_sourse)){
                 $pic = $this->getImage($image_sourse, $original); // добываем изображение
@@ -112,7 +116,6 @@ class ParseController extends Controller
             }else{
                 $massData['image']='NoPoster';
             }
-
             return view('parseFormImdb', ['massData' => $massData]);
         }
     }
@@ -232,7 +235,6 @@ class ParseController extends Controller
                 if($new_date!=$film->Blu_ray){
                     //Сделать функцию добавления в новости
                     $film_model=Film::find($film->id);
-
                     $film_model->Blu_ray=$new_date;
                     $film_model->save();
                     FilmChange::insert([
@@ -247,6 +249,33 @@ class ParseController extends Controller
            }
        }
         //return redirect('/admin');
+    }
+    public  function update_imdb(){
+        $updated_films =Film::select('id' ,'title','release','imdb')-> whereBetween('release',[Carbon::now()->subWeekday(10),Carbon::now()->addMonth(4)])
+            ->get();
+        foreach ($updated_films as $film){
+            //доделать функцию обновления даты
+            if($film->imdb!=null){
+                $new_date=$this->getReleaseImdb($film->imdb);
+                if($new_date!=null){
+                    $new_date=trim($new_date);
+                    if($new_date!=$film->release){
+                        //Сделать функцию добавления в новости
+                        $film_model=Film::find($film->id);
+                        $film_model->release=$new_date;
+                       // $film_model->save();
+                        /*   FilmChange::insert([
+                               'film_id'=>$film->id,
+                               'DVD_release'=>0
+                           ]);*/
+                        echo "Дата изменена ".$film->title." на ".$new_date."<br>";
+                    }else{
+                        echo "Даты совпали для ".$film->title."<br>";
+                        continue;
+                    }
+                }
+            }
+        }
     }
     public function parseImage(Request $request){
         $url=$request->url_image;
