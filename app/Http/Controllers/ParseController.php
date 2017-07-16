@@ -48,6 +48,8 @@ class ParseController extends Controller
     }
     public function getReleaseImdb($url){
         $flag = 0;
+        preg_match('~tt.[0-9]{1,}~',$url,$a);
+        $url=$a[0];
         // $url='http://www.imdb.com/title/tt4765284/';
         $url =  'http://www.imdb.com/title/'.$url.'/';
         $simpleHTML = new Htmldom();

@@ -1,0 +1,85 @@
+@charset "UTF-8";
+@font-face {
+  font-family: virgo-01;
+  /* Гарнитура шрифта */
+  src: url(fonts/virgo-01.ttf);
+  /* Путь к файлу со шрифтом */ }
+
+@font-face {
+  font-family: sergo;
+  src: url(fonts/Segoe-WP-Light.ttf); }
+
+html {
+  height: 100%; }
+
+body {
+  background: url("images/bg_404.jpg") 100% 100% no-repeat;
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  body .message {
+    color: white;
+    font-family: "virgo-01";
+    font-size: 120px;
+    line-height: 1px; }
+  body .oops {
+    font-family: 'sergo';
+    color: white;
+    font-size: 18px;
+    margin: 20px;
+    font-weight: bold; }
+  body .search {
+    width: 42%;
+    height: 131px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 3px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    font-family: 'sergo'; }
+    body .search a {
+      color: white; }
+    body .search form {
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%; }
+    body .search p {
+      opacity: 0.8; }
+    body .search .inp-qwest {
+      width: 80%;
+      display: flex;
+      justify-content: space-between; }
+      body .search .inp-qwest input[type="text"] {
+        background: white;
+        padding: 10px;
+        padding-left: 40px;
+        width: 60%;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 2px solid #000; }
+      body .search .inp-qwest:before {
+        padding-left: 5px;
+        padding-top: 5px;
+        font-family: "FontAwesome";
+        content: "\f002";
+        font-size: 30px;
+        position: absolute;
+        color: #d5d5d5; }
+      body .search .inp-qwest input[type="button"] {
+        padding: 12px;
+        border: none;
+        background: rgba(10, 10, 10, 0.2);
+        box-sizing: border-box;
+        width: 30%;
+        cursor: pointer; }
+        body .search .inp-qwest input[type="button"]:hover {
+          background: rgba(10, 10, 10, 0.5); }
